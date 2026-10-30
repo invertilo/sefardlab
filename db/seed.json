@@ -1,0 +1,2905 @@
+[
+  {
+    "id": 1,
+    "day": 1,
+    "week": 1,
+    "title": "Álef, Bet, Guímel, Dálet, He",
+    "description": "Las cinco primeras letras del alefato, sus sonidos y tu primera palabra.",
+    "content": [
+      {
+        "type": "text",
+        "data": "El hebreo se lee de derecha a izquierda. Su alfabeto, el alefato, tiene 22 letras y todas son consonantes: las vocales se marcan con puntos y rayitas (el nikud)."
+      },
+      {
+        "type": "hebrew",
+        "data": "א",
+        "transliteration": "Álef",
+        "translation": "No tiene sonido propio: suena la vocal que la acompañe."
+      },
+      {
+        "type": "hebrew",
+        "data": "בּ",
+        "transliteration": "Bet",
+        "translation": "Suena «b», como en «barco»."
+      },
+      {
+        "type": "hebrew",
+        "data": "ב",
+        "transliteration": "Vet",
+        "translation": "Sin el punto interior suena «v» (labiodental, como en inglés «very»)."
+      },
+      {
+        "type": "hebrew",
+        "data": "ג",
+        "transliteration": "Guímel",
+        "translation": "Suena «g», como en «gato»."
+      },
+      {
+        "type": "hebrew",
+        "data": "ד",
+        "transliteration": "Dálet",
+        "translation": "Suena «d», como en «dedo»."
+      },
+      {
+        "type": "hebrew",
+        "data": "ה",
+        "transliteration": "He",
+        "translation": "Una «h» suave y aspirada; al final de palabra casi no suena."
+      },
+      {
+        "type": "tip",
+        "data": "Bet y Vet son la misma letra. El punto interior (daguesh) la convierte en «b»."
+      },
+      {
+        "type": "hebrew",
+        "data": "אַבָּא",
+        "transliteration": "aba",
+        "translation": "papá"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Cuál de estas letras es Álef?",
+        "options": [
+          "א",
+          "ב",
+          "ג",
+          "ד"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo suena esta letra?",
+        "prompt": "בּ",
+        "options": [
+          "v",
+          "g",
+          "d",
+          "b"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cuál es Dálet?",
+        "options": [
+          "ב",
+          "ג",
+          "ד",
+          "ה"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "אַבָּא",
+        "options": [
+          "pan",
+          "papá",
+          "casa",
+          "agua"
+        ],
+        "correct": 1
+      }
+    ],
+    "min_reading_speed": 0
+  },
+  {
+    "id": 2,
+    "day": 2,
+    "week": 1,
+    "title": "Vav, Zain, Jet, Tet, Yod",
+    "description": "Cinco letras más, entre ellas la Jet, que suena como nuestra «j».",
+    "content": [
+      {
+        "type": "text",
+        "data": "Hoy sumas cinco letras. Buena noticia para hispanohablantes: la Jet suena exactamente como la «j» de «jamón»."
+      },
+      {
+        "type": "hebrew",
+        "data": "ו",
+        "transliteration": "Vav",
+        "translation": "Suena «v». También sirve de vocal «o» o «u»."
+      },
+      {
+        "type": "hebrew",
+        "data": "ז",
+        "transliteration": "Zain",
+        "translation": "Una «s» sonora, como la de «mismo»."
+      },
+      {
+        "type": "hebrew",
+        "data": "ח",
+        "transliteration": "Jet",
+        "translation": "Suena «j», como en «jamón»."
+      },
+      {
+        "type": "hebrew",
+        "data": "ט",
+        "transliteration": "Tet",
+        "translation": "Suena «t»."
+      },
+      {
+        "type": "hebrew",
+        "data": "י",
+        "transliteration": "Yod",
+        "translation": "Suena «y». Es la letra más pequeña del alefato."
+      },
+      {
+        "type": "tip",
+        "data": "He (ה) y Jet (ח) se parecen. La He tiene un hueco arriba a la izquierda; la Jet está cerrada."
+      },
+      {
+        "type": "hebrew",
+        "data": "חַי",
+        "transliteration": "jai",
+        "translation": "vivo"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué letra suena como la «j» de «jamón»?",
+        "options": [
+          "ח",
+          "ה",
+          "ט",
+          "ז"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se llama esta letra?",
+        "prompt": "ט",
+        "options": [
+          "Yod",
+          "Vav",
+          "Zain",
+          "Tet"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cuál es la letra más pequeña del alefato?",
+        "options": [
+          "ז",
+          "ט",
+          "י",
+          "ו"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "חַי",
+        "options": [
+          "mar",
+          "vivo",
+          "fiesta",
+          "padre"
+        ],
+        "correct": 1
+      }
+    ],
+    "min_reading_speed": 0
+  },
+  {
+    "id": 3,
+    "day": 3,
+    "week": 1,
+    "title": "Kaf, Lámed, Mem, Nun, Sámej",
+    "description": "La Kaf con sus dos sonidos y cuatro letras muy frecuentes.",
+    "content": [
+      {
+        "type": "text",
+        "data": "Estas letras aparecen en muchísimas palabras. Fíjate en la Kaf: como la Bet, cambia de sonido según lleve punto o no."
+      },
+      {
+        "type": "hebrew",
+        "data": "כּ",
+        "transliteration": "Kaf",
+        "translation": "Con punto suena «k»."
+      },
+      {
+        "type": "hebrew",
+        "data": "כ",
+        "transliteration": "Jaf",
+        "translation": "Sin punto suena «j», como la Jet."
+      },
+      {
+        "type": "hebrew",
+        "data": "ל",
+        "transliteration": "Lámed",
+        "translation": "Suena «l». Es la única letra que sube por encima de la línea."
+      },
+      {
+        "type": "hebrew",
+        "data": "מ",
+        "transliteration": "Mem",
+        "translation": "Suena «m»."
+      },
+      {
+        "type": "hebrew",
+        "data": "נ",
+        "transliteration": "Nun",
+        "translation": "Suena «n»."
+      },
+      {
+        "type": "hebrew",
+        "data": "ס",
+        "transliteration": "Sámej",
+        "translation": "Suena «s»."
+      },
+      {
+        "type": "hebrew",
+        "data": "כֶּלֶב",
+        "transliteration": "kélev",
+        "translation": "perro"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué letra suena «l»?",
+        "options": [
+          "ל",
+          "כ",
+          "נ",
+          "מ"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo suena esta letra?",
+        "prompt": "ס",
+        "options": [
+          "m",
+          "n",
+          "l",
+          "s"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Sin el punto interior, la Kaf (כ) suena…",
+        "options": [
+          "l",
+          "n",
+          "j",
+          "k"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "כֶּלֶב",
+        "options": [
+          "corazón",
+          "perro",
+          "gato",
+          "casa"
+        ],
+        "correct": 1
+      }
+    ],
+    "min_reading_speed": 0
+  },
+  {
+    "id": 4,
+    "day": 4,
+    "week": 1,
+    "title": "Áyin, Pe, Tsadi, Kuf, Resh",
+    "description": "Cinco letras más: ya conoces casi todo el alefato.",
+    "content": [
+      {
+        "type": "text",
+        "data": "Con esta lección llegas a 20 letras. La Pe es la tercera letra «doble»: con punto «p», sin punto «f»."
+      },
+      {
+        "type": "hebrew",
+        "data": "ע",
+        "transliteration": "Áyin",
+        "translation": "Hoy en día es muda, como la Álef."
+      },
+      {
+        "type": "hebrew",
+        "data": "פּ",
+        "transliteration": "Pe",
+        "translation": "Con punto suena «p»."
+      },
+      {
+        "type": "hebrew",
+        "data": "פ",
+        "transliteration": "Fe",
+        "translation": "Sin punto suena «f»."
+      },
+      {
+        "type": "hebrew",
+        "data": "צ",
+        "transliteration": "Tsadi",
+        "translation": "Suena «ts», como en «tsunami»."
+      },
+      {
+        "type": "hebrew",
+        "data": "ק",
+        "transliteration": "Kuf",
+        "translation": "Suena «k», igual que la Kaf con punto."
+      },
+      {
+        "type": "hebrew",
+        "data": "ר",
+        "transliteration": "Resh",
+        "translation": "Suena «r». Cuidado: se parece a la Dálet (ד), pero es redondeada."
+      },
+      {
+        "type": "hebrew",
+        "data": "עִיר",
+        "transliteration": "ir",
+        "translation": "ciudad"
+      },
+      {
+        "type": "hebrew",
+        "data": "פֶּרַח",
+        "transliteration": "péraj",
+        "translation": "flor"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué letra suena «ts»?",
+        "options": [
+          "צ",
+          "ק",
+          "ר",
+          "ע"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Sin punto, ¿cómo suena esta letra?",
+        "prompt": "פ",
+        "options": [
+          "p",
+          "ts",
+          "r",
+          "f"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cuál es Resh?",
+        "options": [
+          "ה",
+          "ק",
+          "ר",
+          "ד"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "עִיר",
+        "options": [
+          "calle",
+          "ciudad",
+          "flor",
+          "río"
+        ],
+        "correct": 1
+      }
+    ],
+    "min_reading_speed": 0
+  },
+  {
+    "id": 5,
+    "day": 5,
+    "week": 1,
+    "title": "Shin, Tav y las letras finales",
+    "description": "Completas el alefato y aprendes las cinco formas finales.",
+    "content": [
+      {
+        "type": "text",
+        "data": "¡Últimas letras! Además, cinco letras cambian de forma cuando van al final de la palabra."
+      },
+      {
+        "type": "hebrew",
+        "data": "שׁ",
+        "transliteration": "Shin",
+        "translation": "Con el punto a la derecha suena «sh»."
+      },
+      {
+        "type": "hebrew",
+        "data": "שׂ",
+        "transliteration": "Sin",
+        "translation": "Con el punto a la izquierda suena «s»."
+      },
+      {
+        "type": "hebrew",
+        "data": "ת",
+        "transliteration": "Tav",
+        "translation": "Suena «t»."
+      },
+      {
+        "type": "text",
+        "data": "Formas finales: Kaf → ך, Mem → ם, Nun → ן, Pe → ף, Tsadi → ץ. Suenan igual que su forma normal."
+      },
+      {
+        "type": "hebrew",
+        "data": "ך ם ן ף ץ",
+        "transliteration": "letras finales (sofit)"
+      },
+      {
+        "type": "tip",
+        "data": "La Mem final (ם) es un cuadrado cerrado; no la confundas con la Sámej (ס), que es redonda."
+      },
+      {
+        "type": "hebrew",
+        "data": "שָׁלוֹם",
+        "transliteration": "shalom",
+        "translation": "paz; también «hola» y «adiós»"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo suena esta letra (punto a la derecha)?",
+        "prompt": "שׁ",
+        "options": [
+          "sh",
+          "s",
+          "t",
+          "ts"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cuál es la forma final de Mem?",
+        "options": [
+          "מ",
+          "ן",
+          "ס",
+          "ם"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Dónde se escribe la letra ן?",
+        "options": [
+          "En medio de la palabra",
+          "Solo en los números",
+          "Al final de la palabra",
+          "Al principio de la palabra"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "שָׁלוֹם",
+        "options": [
+          "sí",
+          "paz / hola",
+          "gracias",
+          "por favor"
+        ],
+        "correct": 1
+      }
+    ],
+    "min_reading_speed": 0
+  },
+  {
+    "id": 6,
+    "day": 6,
+    "week": 1,
+    "title": "Vocales A y E",
+    "description": "El nikud: las marcas que convierten consonantes en sílabas.",
+    "content": [
+      {
+        "type": "text",
+        "data": "Las vocales se escriben debajo (o encima) de la consonante y se leen después de ella. Empezamos por los sonidos «a» y «e»."
+      },
+      {
+        "type": "hebrew",
+        "data": "בָּ",
+        "transliteration": "ba",
+        "translation": "Kamats: una «T» pequeña debajo. Suena «a»."
+      },
+      {
+        "type": "hebrew",
+        "data": "בַּ",
+        "transliteration": "ba",
+        "translation": "Pataj: una raya debajo. También «a»."
+      },
+      {
+        "type": "hebrew",
+        "data": "בֵּ",
+        "transliteration": "be",
+        "translation": "Tsere: dos puntos en horizontal. Suena «e»."
+      },
+      {
+        "type": "hebrew",
+        "data": "בֶּ",
+        "transliteration": "be",
+        "translation": "Segol: tres puntos en triángulo. También «e»."
+      },
+      {
+        "type": "hebrew",
+        "data": "בְּ",
+        "transliteration": "be / b",
+        "translation": "Shva: dos puntos en vertical. Una «e» muy breve o nada."
+      },
+      {
+        "type": "hebrew",
+        "data": "מֶלֶךְ",
+        "transliteration": "mélej",
+        "translation": "rey"
+      },
+      {
+        "type": "hebrew",
+        "data": "אֶרֶץ",
+        "transliteration": "érets",
+        "translation": "tierra, país"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se lee?",
+        "prompt": "בַּ",
+        "options": [
+          "ba",
+          "be",
+          "bi",
+          "bo"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se lee?",
+        "prompt": "מֵ",
+        "options": [
+          "ma",
+          "mi",
+          "mu",
+          "me"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se lee?",
+        "prompt": "לָ",
+        "options": [
+          "li",
+          "lu",
+          "la",
+          "le"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "מֶלֶךְ",
+        "options": [
+          "ciudad",
+          "rey",
+          "tierra",
+          "perro"
+        ],
+        "correct": 1
+      }
+    ],
+    "min_reading_speed": 0
+  },
+  {
+    "id": 7,
+    "day": 7,
+    "week": 1,
+    "title": "Vocales I, O, U y repaso",
+    "description": "Cierras la semana del alfabeto y lees tus primeras palabras completas.",
+    "content": [
+      {
+        "type": "text",
+        "data": "Últimas vocales. La «o» y la «u» suelen apoyarse en la letra Vav (ו)."
+      },
+      {
+        "type": "hebrew",
+        "data": "בִּ",
+        "transliteration": "bi",
+        "translation": "Jirik: un punto debajo. Suena «i»."
+      },
+      {
+        "type": "hebrew",
+        "data": "בּוֹ",
+        "transliteration": "bo",
+        "translation": "Jolam: un punto encima de la Vav. Suena «o»."
+      },
+      {
+        "type": "hebrew",
+        "data": "בּוּ",
+        "transliteration": "bu",
+        "translation": "Shuruk: un punto dentro de la Vav. Suena «u»."
+      },
+      {
+        "type": "hebrew",
+        "data": "בֻּ",
+        "transliteration": "bu",
+        "translation": "Kubuts: tres puntos en diagonal. También «u»."
+      },
+      {
+        "type": "hebrew",
+        "data": "סוּס",
+        "transliteration": "sus",
+        "translation": "caballo"
+      },
+      {
+        "type": "hebrew",
+        "data": "תּוֹרָה",
+        "transliteration": "Torá",
+        "translation": "enseñanza; la Torá"
+      },
+      {
+        "type": "tip",
+        "data": "Ya conoces todo el alefato y todas las vocales. A partir de mañana, ¡a leer palabras!"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se lee?",
+        "prompt": "דּוֹ",
+        "options": [
+          "do",
+          "du",
+          "di",
+          "da"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se lee?",
+        "prompt": "לוּ",
+        "options": [
+          "lo",
+          "li",
+          "le",
+          "lu"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se lee esta palabra?",
+        "prompt": "סוּס",
+        "options": [
+          "sos",
+          "sis",
+          "sus",
+          "sas"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "תּוֹרָה",
+        "options": [
+          "tierra",
+          "enseñanza (la Torá)",
+          "ciudad",
+          "paz"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "שָׁלוֹם אַבָּא",
+        "transliteration": "Shalom, aba.",
+        "translation": "Hola, papá.",
+        "word_count": 2
+      }
+    ],
+    "min_reading_speed": 0
+  },
+  {
+    "id": 8,
+    "day": 8,
+    "week": 2,
+    "title": "La familia",
+    "description": "Palabras para hablar de tu familia.",
+    "content": [
+      {
+        "type": "text",
+        "data": "Empieza la semana de las palabras. Lee cada una despacio, sílaba a sílaba, y después de corrido."
+      },
+      {
+        "type": "hebrew",
+        "data": "אָב",
+        "transliteration": "av",
+        "translation": "padre"
+      },
+      {
+        "type": "hebrew",
+        "data": "אֵם",
+        "transliteration": "em",
+        "translation": "madre"
+      },
+      {
+        "type": "hebrew",
+        "data": "אָח",
+        "transliteration": "aj",
+        "translation": "hermano"
+      },
+      {
+        "type": "hebrew",
+        "data": "אָחוֹת",
+        "transliteration": "ajot",
+        "translation": "hermana"
+      },
+      {
+        "type": "hebrew",
+        "data": "בֵּן",
+        "transliteration": "ben",
+        "translation": "hijo"
+      },
+      {
+        "type": "hebrew",
+        "data": "בַּת",
+        "transliteration": "bat",
+        "translation": "hija"
+      },
+      {
+        "type": "hebrew",
+        "data": "מִשְׁפָּחָה",
+        "transliteration": "mishpajá",
+        "translation": "familia"
+      },
+      {
+        "type": "tip",
+        "data": "«Y» se escribe con una Vav pegada a la palabra siguiente: בַּת → וּבַת (y una hija)."
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "אֵם",
+        "options": [
+          "madre",
+          "padre",
+          "hermano",
+          "hija"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice «hermana»?",
+        "options": [
+          "אָח",
+          "בַּת",
+          "אֵם",
+          "אָחוֹת"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "מִשְׁפָּחָה",
+        "options": [
+          "casa",
+          "escuela",
+          "familia",
+          "amigos"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "אָב, אֵם, בֵּן וּבַת",
+        "transliteration": "Av, em, ben uvat.",
+        "translation": "Padre, madre, hijo e hija.",
+        "word_count": 4
+      }
+    ],
+    "min_reading_speed": 10
+  },
+  {
+    "id": 9,
+    "day": 9,
+    "week": 2,
+    "title": "Saludos y cortesía",
+    "description": "Lo imprescindible para saludar, agradecer y pedir por favor.",
+    "content": [
+      {
+        "type": "hebrew",
+        "data": "שָׁלוֹם",
+        "transliteration": "shalom",
+        "translation": "hola / adiós"
+      },
+      {
+        "type": "hebrew",
+        "data": "בֹּקֶר טוֹב",
+        "transliteration": "bóker tov",
+        "translation": "buenos días"
+      },
+      {
+        "type": "hebrew",
+        "data": "לַיְלָה טוֹב",
+        "transliteration": "láila tov",
+        "translation": "buenas noches"
+      },
+      {
+        "type": "hebrew",
+        "data": "תּוֹדָה",
+        "transliteration": "todá",
+        "translation": "gracias"
+      },
+      {
+        "type": "hebrew",
+        "data": "בְּבַקָּשָׁה",
+        "transliteration": "bevakashá",
+        "translation": "por favor; de nada"
+      },
+      {
+        "type": "hebrew",
+        "data": "כֵּן",
+        "transliteration": "ken",
+        "translation": "sí"
+      },
+      {
+        "type": "hebrew",
+        "data": "לֹא",
+        "transliteration": "lo",
+        "translation": "no"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "תּוֹדָה",
+        "options": [
+          "buenos días",
+          "gracias",
+          "por favor",
+          "sí"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice «no»?",
+        "options": [
+          "לֹא",
+          "כֵּן",
+          "טוֹב",
+          "שָׁלוֹם"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta expresión?",
+        "prompt": "לַיְלָה טוֹב",
+        "options": [
+          "buenos días",
+          "mucho gusto",
+          "hasta luego",
+          "buenas noches"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "בֹּקֶר טוֹב, תּוֹדָה רַבָּה",
+        "transliteration": "Bóker tov, todá rabá.",
+        "translation": "Buenos días, muchas gracias.",
+        "word_count": 4
+      }
+    ],
+    "min_reading_speed": 10
+  },
+  {
+    "id": 10,
+    "day": 10,
+    "week": 2,
+    "title": "Números del 1 al 10",
+    "description": "Cuenta en hebreo (forma usada para contar).",
+    "content": [
+      {
+        "type": "text",
+        "data": "Para contar se usa la forma femenina de los números. Es la que oirás en precios, horas y teléfonos."
+      },
+      {
+        "type": "hebrew",
+        "data": "אַחַת",
+        "transliteration": "ajat",
+        "translation": "1"
+      },
+      {
+        "type": "hebrew",
+        "data": "שְׁתַּיִם",
+        "transliteration": "shtáyim",
+        "translation": "2"
+      },
+      {
+        "type": "hebrew",
+        "data": "שָׁלוֹשׁ",
+        "transliteration": "shalosh",
+        "translation": "3"
+      },
+      {
+        "type": "hebrew",
+        "data": "אַרְבַּע",
+        "transliteration": "arbá",
+        "translation": "4"
+      },
+      {
+        "type": "hebrew",
+        "data": "חָמֵשׁ",
+        "transliteration": "jamesh",
+        "translation": "5"
+      },
+      {
+        "type": "hebrew",
+        "data": "שֵׁשׁ",
+        "transliteration": "shesh",
+        "translation": "6"
+      },
+      {
+        "type": "hebrew",
+        "data": "שֶׁבַע",
+        "transliteration": "sheva",
+        "translation": "7"
+      },
+      {
+        "type": "hebrew",
+        "data": "שְׁמוֹנֶה",
+        "transliteration": "shmoné",
+        "translation": "8"
+      },
+      {
+        "type": "hebrew",
+        "data": "תֵּשַׁע",
+        "transliteration": "tesha",
+        "translation": "9"
+      },
+      {
+        "type": "hebrew",
+        "data": "עֶשֶׂר",
+        "transliteration": "éser",
+        "translation": "10"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué número es?",
+        "prompt": "שָׁלוֹשׁ",
+        "options": [
+          "5",
+          "8",
+          "3",
+          "2"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice 10?",
+        "options": [
+          "תֵּשַׁע",
+          "עֶשֶׂר",
+          "שֶׁבַע",
+          "שֵׁשׁ"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué número es?",
+        "prompt": "שְׁמוֹנֶה",
+        "options": [
+          "8",
+          "6",
+          "7",
+          "9"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "אַחַת, שְׁתַּיִם, שָׁלוֹשׁ, אַרְבַּע, חָמֵשׁ",
+        "transliteration": "Ajat, shtáyim, shalosh, arbá, jamesh.",
+        "translation": "Uno, dos, tres, cuatro, cinco.",
+        "word_count": 5
+      }
+    ],
+    "min_reading_speed": 10
+  },
+  {
+    "id": 11,
+    "day": 11,
+    "week": 2,
+    "title": "La casa",
+    "description": "Objetos y espacios de la casa.",
+    "content": [
+      {
+        "type": "hebrew",
+        "data": "בַּיִת",
+        "transliteration": "báyit",
+        "translation": "casa"
+      },
+      {
+        "type": "hebrew",
+        "data": "דֶּלֶת",
+        "transliteration": "délet",
+        "translation": "puerta"
+      },
+      {
+        "type": "hebrew",
+        "data": "חַלּוֹן",
+        "transliteration": "jalón",
+        "translation": "ventana"
+      },
+      {
+        "type": "hebrew",
+        "data": "שֻׁלְחָן",
+        "transliteration": "shuljan",
+        "translation": "mesa"
+      },
+      {
+        "type": "hebrew",
+        "data": "כִּסֵּא",
+        "transliteration": "kisé",
+        "translation": "silla"
+      },
+      {
+        "type": "hebrew",
+        "data": "מִטָּה",
+        "transliteration": "mitá",
+        "translation": "cama"
+      },
+      {
+        "type": "tip",
+        "data": "«Hay» se dice יֵשׁ (yesh). יֵשׁ שֻׁלְחָן = hay una mesa."
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "דֶּלֶת",
+        "options": [
+          "ventana",
+          "mesa",
+          "cama",
+          "puerta"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice «casa»?",
+        "options": [
+          "חַלּוֹן",
+          "כִּסֵּא",
+          "בַּיִת",
+          "מִטָּה"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "שֻׁלְחָן",
+        "options": [
+          "libro",
+          "mesa",
+          "silla",
+          "puerta"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "יֵשׁ שֻׁלְחָן וְכִסֵּא בַּבַּיִת",
+        "transliteration": "Yesh shuljan vejisé babáyit.",
+        "translation": "Hay una mesa y una silla en la casa.",
+        "word_count": 4
+      }
+    ],
+    "min_reading_speed": 10
+  },
+  {
+    "id": 12,
+    "day": 12,
+    "week": 2,
+    "title": "La comida",
+    "description": "Palabras básicas de la mesa.",
+    "content": [
+      {
+        "type": "hebrew",
+        "data": "לֶחֶם",
+        "transliteration": "léjem",
+        "translation": "pan"
+      },
+      {
+        "type": "hebrew",
+        "data": "מַיִם",
+        "transliteration": "máyim",
+        "translation": "agua"
+      },
+      {
+        "type": "hebrew",
+        "data": "יַיִן",
+        "transliteration": "yáyin",
+        "translation": "vino"
+      },
+      {
+        "type": "hebrew",
+        "data": "חָלָב",
+        "transliteration": "jalav",
+        "translation": "leche"
+      },
+      {
+        "type": "hebrew",
+        "data": "גְּבִינָה",
+        "transliteration": "gviná",
+        "translation": "queso"
+      },
+      {
+        "type": "hebrew",
+        "data": "תַּפּוּחַ",
+        "transliteration": "tapúaj",
+        "translation": "manzana"
+      },
+      {
+        "type": "tip",
+        "data": "En תַּפּוּחַ la raya bajo la Jet final se lee antes que ella: «ta-pu-aj»."
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "מַיִם",
+        "options": [
+          "agua",
+          "vino",
+          "leche",
+          "pan"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice «leche»?",
+        "options": [
+          "לֶחֶם",
+          "יַיִן",
+          "תַּפּוּחַ",
+          "חָלָב"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "תַּפּוּחַ",
+        "options": [
+          "naranja",
+          "pan",
+          "manzana",
+          "queso"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "לֶחֶם, גְּבִינָה וְיַיִן",
+        "transliteration": "Léjem, gviná veyáyin.",
+        "translation": "Pan, queso y vino.",
+        "word_count": 3
+      }
+    ],
+    "min_reading_speed": 10
+  },
+  {
+    "id": 13,
+    "day": 13,
+    "week": 2,
+    "title": "Palabras de Sefarad",
+    "description": "Vocabulario ligado a la historia y la vida de las comunidades sefardíes.",
+    "content": [
+      {
+        "type": "text",
+        "data": "Sefarad es el nombre hebreo de la península ibérica; ya aparece en la Biblia (Abdías 1:20). De ahí viene «sefardí»."
+      },
+      {
+        "type": "hebrew",
+        "data": "סְפָרַד",
+        "transliteration": "Sefarad",
+        "translation": "España (Sefarad)"
+      },
+      {
+        "type": "hebrew",
+        "data": "לָדִינוֹ",
+        "transliteration": "ladino",
+        "translation": "judeoespañol"
+      },
+      {
+        "type": "hebrew",
+        "data": "עִבְרִית",
+        "transliteration": "ivrit",
+        "translation": "hebreo (el idioma)"
+      },
+      {
+        "type": "hebrew",
+        "data": "שַׁבָּת",
+        "transliteration": "Shabat",
+        "translation": "sábado, día de descanso"
+      },
+      {
+        "type": "hebrew",
+        "data": "חַג",
+        "transliteration": "jag",
+        "translation": "fiesta"
+      },
+      {
+        "type": "hebrew",
+        "data": "קְהִלָּה",
+        "transliteration": "kehilá",
+        "translation": "comunidad"
+      },
+      {
+        "type": "hebrew",
+        "data": "סִפּוּר",
+        "transliteration": "sipur",
+        "translation": "cuento, historia"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "סְפָרַד",
+        "options": [
+          "Marruecos",
+          "España (Sefarad)",
+          "Portugal",
+          "Israel"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice «hebreo» (el idioma)?",
+        "options": [
+          "עִבְרִית",
+          "לָדִינוֹ",
+          "סְפָרַד",
+          "קְהִלָּה"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "קְהִלָּה",
+        "options": [
+          "fiesta",
+          "historia",
+          "sábado",
+          "comunidad"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "שַׁבָּת שָׁלוֹם וְחַג שָׂמֵחַ",
+        "transliteration": "Shabat shalom vejag saméaj.",
+        "translation": "Feliz sábado y feliz fiesta.",
+        "word_count": 4
+      }
+    ],
+    "min_reading_speed": 10
+  },
+  {
+    "id": 14,
+    "day": 14,
+    "week": 2,
+    "title": "Adjetivos básicos",
+    "description": "Describe cosas: grande, pequeño, bueno, bonito…",
+    "content": [
+      {
+        "type": "hebrew",
+        "data": "גָּדוֹל",
+        "transliteration": "gadol",
+        "translation": "grande"
+      },
+      {
+        "type": "hebrew",
+        "data": "קָטָן",
+        "transliteration": "katán",
+        "translation": "pequeño"
+      },
+      {
+        "type": "hebrew",
+        "data": "טוֹב",
+        "transliteration": "tov",
+        "translation": "bueno"
+      },
+      {
+        "type": "hebrew",
+        "data": "יָפֶה",
+        "transliteration": "yafé",
+        "translation": "bonito"
+      },
+      {
+        "type": "hebrew",
+        "data": "חָדָשׁ",
+        "transliteration": "jadash",
+        "translation": "nuevo"
+      },
+      {
+        "type": "hebrew",
+        "data": "יָשָׁן",
+        "transliteration": "yashán",
+        "translation": "viejo"
+      },
+      {
+        "type": "tip",
+        "data": "El adjetivo va después del sustantivo, como en español: בַּיִת גָּדוֹל = una casa grande."
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "קָטָן",
+        "options": [
+          "nuevo",
+          "bonito",
+          "pequeño",
+          "grande"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice «bueno»?",
+        "options": [
+          "יָשָׁן",
+          "טוֹב",
+          "יָפֶה",
+          "גָּדוֹל"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple_choice",
+        "question": "En hebreo, el adjetivo va…",
+        "options": [
+          "después del sustantivo",
+          "antes del sustantivo",
+          "al final de la frase",
+          "pegado al verbo"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "הַבַּיִת הֶחָדָשׁ יָפֶה",
+        "transliteration": "Habáyit hejadash yafé.",
+        "translation": "La casa nueva es bonita.",
+        "word_count": 3
+      }
+    ],
+    "min_reading_speed": 10
+  },
+  {
+    "id": 15,
+    "day": 15,
+    "week": 2,
+    "title": "Repaso: semana de palabras",
+    "description": "Juntas todo lo aprendido en tu primera frase larga.",
+    "content": [
+      {
+        "type": "text",
+        "data": "Repasa: familia, saludos, números, casa, comida y adjetivos. Hoy lees una frase de siete palabras."
+      },
+      {
+        "type": "hebrew",
+        "data": "יֵשׁ לִי",
+        "transliteration": "yesh li",
+        "translation": "tengo (lit. «hay para mí»)"
+      },
+      {
+        "type": "hebrew",
+        "data": "בַּיִת קָטָן",
+        "transliteration": "báyit katán",
+        "translation": "una casa pequeña"
+      },
+      {
+        "type": "hebrew",
+        "data": "מִשְׁפָּחָה גְּדוֹלָה",
+        "transliteration": "mishpajá gdolá",
+        "translation": "una familia grande"
+      },
+      {
+        "type": "tip",
+        "data": "Los adjetivos concuerdan en género: גָּדוֹל (m.) → גְּדוֹלָה (f.)."
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "לֶחֶם",
+        "options": [
+          "agua",
+          "queso",
+          "vino",
+          "pan"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice «gracias»?",
+        "options": [
+          "בְּבַקָּשָׁה",
+          "שָׁלוֹם",
+          "תּוֹדָה",
+          "סְלִיחָה"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué número es?",
+        "prompt": "חָמֵשׁ",
+        "options": [
+          "7",
+          "5",
+          "4",
+          "6"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta expresión?",
+        "prompt": "יֵשׁ לִי",
+        "options": [
+          "tengo",
+          "quiero",
+          "soy",
+          "hay mucho"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "שָׁלוֹם! יֵשׁ לִי בַּיִת קָטָן וּמִשְׁפָּחָה גְּדוֹלָה",
+        "transliteration": "Shalom! Yesh li báyit katán umishpajá gdolá.",
+        "translation": "¡Hola! Tengo una casa pequeña y una familia grande.",
+        "word_count": 7
+      }
+    ],
+    "min_reading_speed": 10
+  },
+  {
+    "id": 16,
+    "day": 16,
+    "week": 3,
+    "title": "Preséntate",
+    "description": "Di tu nombre, de dónde eres y «mucho gusto».",
+    "content": [
+      {
+        "type": "text",
+        "data": "El hebreo distingue si hablas con un hombre o con una mujer, incluso en preguntas sencillas."
+      },
+      {
+        "type": "hebrew",
+        "data": "שְׁמִי",
+        "transliteration": "shmí",
+        "translation": "me llamo (lit. «mi nombre»)"
+      },
+      {
+        "type": "hebrew",
+        "data": "מָה שִׁמְךָ?",
+        "transliteration": "¿ma shimjá?",
+        "translation": "¿cómo te llamas? (a un hombre)"
+      },
+      {
+        "type": "hebrew",
+        "data": "מָה שְׁמֵךְ?",
+        "transliteration": "¿ma shmej?",
+        "translation": "¿cómo te llamas? (a una mujer)"
+      },
+      {
+        "type": "hebrew",
+        "data": "אֲנִי מִסְּפָרַד",
+        "transliteration": "aní mi-Sefarad",
+        "translation": "soy de España"
+      },
+      {
+        "type": "hebrew",
+        "data": "נָעִים מְאוֹד",
+        "transliteration": "naím meod",
+        "translation": "mucho gusto"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "שְׁמִי",
+        "options": [
+          "soy de",
+          "mucho gusto",
+          "¿cómo estás?",
+          "me llamo"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo le preguntas el nombre a un hombre?",
+        "options": [
+          "נָעִים מְאוֹד",
+          "שְׁמִי",
+          "מָה שִׁמְךָ?",
+          "מָה שְׁמֵךְ?"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta expresión?",
+        "prompt": "נָעִים מְאוֹד",
+        "options": [
+          "hasta luego",
+          "mucho gusto",
+          "buenas noches",
+          "gracias"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "שָׁלוֹם, שְׁמִי דָּוִד. אֲנִי מִסְּפָרַד. נָעִים מְאוֹד!",
+        "transliteration": "Shalom, shmí David. Aní mi-Sefarad. ¡Naím meod!",
+        "translation": "Hola, me llamo David. Soy de España. ¡Mucho gusto!",
+        "word_count": 7
+      }
+    ],
+    "min_reading_speed": 15
+  },
+  {
+    "id": 17,
+    "day": 17,
+    "week": 3,
+    "title": "Pronombres",
+    "description": "Yo, tú, él, ella, nosotros… y una frase sin verbo «ser».",
+    "content": [
+      {
+        "type": "hebrew",
+        "data": "אֲנִי",
+        "transliteration": "aní",
+        "translation": "yo"
+      },
+      {
+        "type": "hebrew",
+        "data": "אַתָּה",
+        "transliteration": "atá",
+        "translation": "tú (a un hombre)"
+      },
+      {
+        "type": "hebrew",
+        "data": "אַתְּ",
+        "transliteration": "at",
+        "translation": "tú (a una mujer)"
+      },
+      {
+        "type": "hebrew",
+        "data": "הוּא",
+        "transliteration": "hu",
+        "translation": "él"
+      },
+      {
+        "type": "hebrew",
+        "data": "הִיא",
+        "transliteration": "hi",
+        "translation": "ella"
+      },
+      {
+        "type": "hebrew",
+        "data": "אֲנַחְנוּ",
+        "transliteration": "anájnu",
+        "translation": "nosotros"
+      },
+      {
+        "type": "hebrew",
+        "data": "הֵם",
+        "transliteration": "hem",
+        "translation": "ellos"
+      },
+      {
+        "type": "tip",
+        "data": "En presente no hay verbo «ser/estar»: הוּא טוֹב = él es bueno."
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "הִיא",
+        "options": [
+          "ella",
+          "él",
+          "tú",
+          "yo"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice «nosotros»?",
+        "options": [
+          "הֵם",
+          "אַתָּה",
+          "אֲנִי",
+          "אֲנַחְנוּ"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "La palabra אַתְּ se usa para hablarle a…",
+        "options": [
+          "un grupo",
+          "uno mismo",
+          "una mujer",
+          "un hombre"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "אֲנִי וְאַתָּה, הוּא וְהִיא",
+        "transliteration": "Aní veatá, hu vehí.",
+        "translation": "Tú y yo, él y ella.",
+        "word_count": 4
+      }
+    ],
+    "min_reading_speed": 15
+  },
+  {
+    "id": 18,
+    "day": 18,
+    "week": 3,
+    "title": "Preguntas",
+    "description": "Qué, quién, dónde, cuándo, por qué y cómo.",
+    "content": [
+      {
+        "type": "hebrew",
+        "data": "מָה",
+        "transliteration": "ma",
+        "translation": "qué"
+      },
+      {
+        "type": "hebrew",
+        "data": "מִי",
+        "transliteration": "mi",
+        "translation": "quién"
+      },
+      {
+        "type": "hebrew",
+        "data": "אֵיפֹה",
+        "transliteration": "eifó",
+        "translation": "dónde"
+      },
+      {
+        "type": "hebrew",
+        "data": "מָתַי",
+        "transliteration": "matai",
+        "translation": "cuándo"
+      },
+      {
+        "type": "hebrew",
+        "data": "לָמָּה",
+        "transliteration": "láma",
+        "translation": "por qué"
+      },
+      {
+        "type": "hebrew",
+        "data": "אֵיךְ",
+        "transliteration": "ej",
+        "translation": "cómo"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "אֵיפֹה",
+        "options": [
+          "por qué",
+          "dónde",
+          "cuándo",
+          "quién"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice «quién»?",
+        "options": [
+          "מִי",
+          "מָה",
+          "אֵיךְ",
+          "מָתַי"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "לָמָּה",
+        "options": [
+          "cómo",
+          "qué",
+          "dónde",
+          "por qué"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "אֵיפֹה הַבַּיִת? מִי שָׁם?",
+        "transliteration": "¿Eifó habáyit? ¿Mi sham?",
+        "translation": "¿Dónde está la casa? ¿Quién está ahí?",
+        "word_count": 4
+      }
+    ],
+    "min_reading_speed": 15
+  },
+  {
+    "id": 19,
+    "day": 19,
+    "week": 3,
+    "title": "Verbos en presente",
+    "description": "Amar, querer, leer, ir y saber: forma masculina y femenina.",
+    "content": [
+      {
+        "type": "text",
+        "data": "En presente, el verbo cambia según el género y el número, no según la persona: אֲנִי קוֹרֵא, אַתָּה קוֹרֵא, הוּא קוֹרֵא."
+      },
+      {
+        "type": "hebrew",
+        "data": "אוֹהֵב / אוֹהֶבֶת",
+        "transliteration": "ohev / ohévet",
+        "translation": "ama, le encanta"
+      },
+      {
+        "type": "hebrew",
+        "data": "רוֹצֶה / רוֹצָה",
+        "transliteration": "rotsé / rotsá",
+        "translation": "quiere"
+      },
+      {
+        "type": "hebrew",
+        "data": "קוֹרֵא / קוֹרֵאת",
+        "transliteration": "koré / korét",
+        "translation": "lee"
+      },
+      {
+        "type": "hebrew",
+        "data": "הוֹלֵךְ / הוֹלֶכֶת",
+        "transliteration": "holej / holéjet",
+        "translation": "va, camina"
+      },
+      {
+        "type": "hebrew",
+        "data": "יוֹדֵעַ / יוֹדַעַת",
+        "transliteration": "yodéa / yodáat",
+        "translation": "sabe"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "קוֹרֵא",
+        "options": [
+          "va",
+          "sabe",
+          "lee",
+          "escribe"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Una mujer dice «quiero»:",
+        "options": [
+          "אֲנִי הוֹלֵךְ",
+          "אֲנִי רוֹצָה",
+          "אֲנִי רוֹצֶה",
+          "אֲנִי אוֹהֵב"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "הוֹלֵךְ",
+        "options": [
+          "va / camina",
+          "quiere",
+          "ama",
+          "sabe"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "אֲנִי קוֹרֵא עִבְרִית וַאֲנִי אוֹהֵב סְפָרִים",
+        "transliteration": "Aní koré ivrit vaaní ohev sfarim.",
+        "translation": "Leo hebreo y me encantan los libros.",
+        "word_count": 6
+      }
+    ],
+    "min_reading_speed": 15
+  },
+  {
+    "id": 20,
+    "day": 20,
+    "week": 3,
+    "title": "Prefijos: el, y, en, a, de",
+    "description": "Letras que se pegan delante de la palabra.",
+    "content": [
+      {
+        "type": "text",
+        "data": "En hebreo, varias palabras cortas no se escriben sueltas: se pegan como prefijo."
+      },
+      {
+        "type": "hebrew",
+        "data": "הַבַּיִת",
+        "transliteration": "habáyit",
+        "translation": "la casa (הַ = el, la)"
+      },
+      {
+        "type": "hebrew",
+        "data": "וּבַיִת",
+        "transliteration": "uváyit",
+        "translation": "y una casa (וְ / וּ = y)"
+      },
+      {
+        "type": "hebrew",
+        "data": "בַּבַּיִת",
+        "transliteration": "babáyit",
+        "translation": "en la casa (בְּ = en)"
+      },
+      {
+        "type": "hebrew",
+        "data": "לַבַּיִת",
+        "transliteration": "labáyit",
+        "translation": "a la casa (לְ = a, para)"
+      },
+      {
+        "type": "hebrew",
+        "data": "מֵהַבַּיִת",
+        "transliteration": "mehabáyit",
+        "translation": "desde la casa (מִ = de, desde)"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "בַּבַּיִת",
+        "options": [
+          "la casa",
+          "a la casa",
+          "y una casa",
+          "en la casa"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué prefijo significa «y»?",
+        "options": [
+          "בְּ",
+          "לְ",
+          "וְ",
+          "הַ"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "הַסֵּפֶר",
+        "options": [
+          "al libro",
+          "el libro",
+          "un libro",
+          "en el libro"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "אֲנִי הוֹלֵךְ מֵהַבַּיִת לָעִיר",
+        "transliteration": "Aní holej mehabáyit la'ir.",
+        "translation": "Voy de la casa a la ciudad.",
+        "word_count": 4
+      }
+    ],
+    "min_reading_speed": 15
+  },
+  {
+    "id": 21,
+    "day": 21,
+    "week": 3,
+    "title": "El tiempo",
+    "description": "Hoy, mañana, ayer, ahora… y los días de la semana.",
+    "content": [
+      {
+        "type": "hebrew",
+        "data": "הַיּוֹם",
+        "transliteration": "hayom",
+        "translation": "hoy"
+      },
+      {
+        "type": "hebrew",
+        "data": "מָחָר",
+        "transliteration": "majar",
+        "translation": "mañana"
+      },
+      {
+        "type": "hebrew",
+        "data": "אֶתְמוֹל",
+        "transliteration": "etmol",
+        "translation": "ayer"
+      },
+      {
+        "type": "hebrew",
+        "data": "עַכְשָׁו",
+        "transliteration": "ajshav",
+        "translation": "ahora"
+      },
+      {
+        "type": "hebrew",
+        "data": "שָׁבוּעַ",
+        "transliteration": "shavúa",
+        "translation": "semana"
+      },
+      {
+        "type": "hebrew",
+        "data": "שָׁנָה",
+        "transliteration": "shaná",
+        "translation": "año"
+      },
+      {
+        "type": "hebrew",
+        "data": "יוֹם רִאשׁוֹן",
+        "transliteration": "yom rishón",
+        "translation": "domingo (lit. «día primero»)"
+      },
+      {
+        "type": "tip",
+        "data": "Los días de la semana se numeran desde el domingo; el sábado es שַׁבָּת."
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "אֶתְמוֹל",
+        "options": [
+          "ayer",
+          "mañana",
+          "hoy",
+          "ahora"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice «ahora»?",
+        "options": [
+          "מָחָר",
+          "שָׁנָה",
+          "הַיּוֹם",
+          "עַכְשָׁו"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "שָׁבוּעַ",
+        "options": [
+          "año",
+          "día",
+          "semana",
+          "mes"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "הַיּוֹם שַׁבָּת, וּמָחָר יוֹם רִאשׁוֹן",
+        "transliteration": "Hayom Shabat, umajar yom rishón.",
+        "translation": "Hoy es sábado y mañana es domingo.",
+        "word_count": 5
+      }
+    ],
+    "min_reading_speed": 15
+  },
+  {
+    "id": 22,
+    "day": 22,
+    "week": 3,
+    "title": "Frases útiles",
+    "description": "Para sobrevivir a tu primera conversación.",
+    "content": [
+      {
+        "type": "hebrew",
+        "data": "מָה שְׁלוֹמְךָ?",
+        "transliteration": "¿ma shlomjá?",
+        "translation": "¿cómo estás? (a un hombre)"
+      },
+      {
+        "type": "hebrew",
+        "data": "מָה נִשְׁמָע?",
+        "transliteration": "¿ma nishmá?",
+        "translation": "¿qué tal?"
+      },
+      {
+        "type": "hebrew",
+        "data": "סְלִיחָה",
+        "transliteration": "slijá",
+        "translation": "perdón, disculpa"
+      },
+      {
+        "type": "hebrew",
+        "data": "אֲנִי לֹא מֵבִין / מְבִינָה",
+        "transliteration": "aní lo mevín / mevina",
+        "translation": "no entiendo (m. / f.)"
+      },
+      {
+        "type": "hebrew",
+        "data": "לְאַט",
+        "transliteration": "leat",
+        "translation": "despacio"
+      },
+      {
+        "type": "hebrew",
+        "data": "לְהִתְרָאוֹת",
+        "transliteration": "lehitraot",
+        "translation": "hasta luego"
+      },
+      {
+        "type": "hebrew",
+        "data": "בְּתֵאָבוֹן",
+        "transliteration": "beteavón",
+        "translation": "¡buen provecho!"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "סְלִיחָה",
+        "options": [
+          "de nada",
+          "perdón",
+          "gracias",
+          "hasta luego"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice «hasta luego»?",
+        "options": [
+          "לְהִתְרָאוֹת",
+          "בְּתֵאָבוֹן",
+          "מָה נִשְׁמָע?",
+          "תּוֹדָה"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cuándo se dice בְּתֵאָבוֹן?",
+        "options": [
+          "Al despedirse",
+          "Al pedir perdón",
+          "Antes de dormir",
+          "Antes de comer"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "סְלִיחָה, אֲנִי לֹא מֵבִין. לְאַט, בְּבַקָּשָׁה",
+        "transliteration": "Slijá, aní lo mevín. Leat, bevakashá.",
+        "translation": "Perdón, no entiendo. Despacio, por favor.",
+        "word_count": 6
+      }
+    ],
+    "min_reading_speed": 15
+  },
+  {
+    "id": 23,
+    "day": 23,
+    "week": 3,
+    "title": "Repaso: semana de frases",
+    "description": "Un mini diálogo con todo lo aprendido.",
+    "content": [
+      {
+        "type": "text",
+        "data": "Lee el diálogo en voz alta. Fíjate en los prefijos (וְ) y en las preguntas."
+      },
+      {
+        "type": "hebrew",
+        "data": "— מָה שְׁלוֹמְךָ, יוֹסֵף?",
+        "transliteration": "¿Ma shlomjá, Yosef?",
+        "translation": "¿Cómo estás, José?"
+      },
+      {
+        "type": "hebrew",
+        "data": "— טוֹב, תּוֹדָה. וְאַתָּה?",
+        "transliteration": "Tov, todá. ¿Veatá?",
+        "translation": "Bien, gracias. ¿Y tú?"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "מָחָר",
+        "options": [
+          "hoy",
+          "semana",
+          "mañana",
+          "ayer"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo se dice «yo»?",
+        "options": [
+          "הִיא",
+          "אֲנִי",
+          "הוּא",
+          "אַתְּ"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "אֵיךְ",
+        "options": [
+          "cómo",
+          "dónde",
+          "cuándo",
+          "quién"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "וְאַתָּה",
+        "options": [
+          "él y ella",
+          "tú y yo",
+          "nosotros",
+          "y tú (a un hombre)"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "מָה שְׁלוֹמְךָ, יוֹסֵף? טוֹב, תּוֹדָה. וְאַתָּה?",
+        "transliteration": "¿Ma shlomjá, Yosef? Tov, todá. ¿Veatá?",
+        "translation": "¿Cómo estás, José? Bien, gracias. ¿Y tú?",
+        "word_count": 6
+      }
+    ],
+    "min_reading_speed": 15
+  },
+  {
+    "id": 24,
+    "day": 24,
+    "week": 4,
+    "title": "Leer sin vocales",
+    "description": "Periódicos, carteles y libros no llevan nikud. Aprende a leerlos.",
+    "content": [
+      {
+        "type": "text",
+        "data": "Casi todo lo que leerás en Israel está escrito sin nikud. Las letras ו y י ayudan: marcan dónde suele haber una «o/u» o una «i»."
+      },
+      {
+        "type": "hebrew",
+        "data": "שָׁלוֹם → שלום",
+        "transliteration": "shalom"
+      },
+      {
+        "type": "hebrew",
+        "data": "תּוֹדָה → תודה",
+        "transliteration": "todá"
+      },
+      {
+        "type": "hebrew",
+        "data": "עִבְרִית → עברית",
+        "transliteration": "ivrit"
+      },
+      {
+        "type": "hebrew",
+        "data": "סֵפֶר → ספר",
+        "transliteration": "séfer",
+        "translation": "libro"
+      },
+      {
+        "type": "hebrew",
+        "data": "יֶלֶד → ילד",
+        "transliteration": "yéled",
+        "translation": "niño"
+      },
+      {
+        "type": "tip",
+        "data": "Sin vocales, lee la palabra entera y usa el contexto, como haces con las abreviaturas en español."
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué palabra es?",
+        "prompt": "תודה",
+        "options": [
+          "hoy",
+          "familia",
+          "gracias",
+          "perdón"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué palabra es?",
+        "prompt": "ספר",
+        "options": [
+          "puerta",
+          "libro",
+          "mesa",
+          "pan"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Sin nikud, ¿qué letras ayudan a adivinar las vocales?",
+        "options": [
+          "ו y י",
+          "ב y כ",
+          "ש y ת",
+          "מ y נ"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "שלום, אני קורא עברית",
+        "transliteration": "Shalom, aní koré ivrit.",
+        "translation": "Hola, leo hebreo.",
+        "word_count": 4
+      }
+    ],
+    "min_reading_speed": 20
+  },
+  {
+    "id": 25,
+    "day": 25,
+    "week": 4,
+    "title": "Bereshit: el primer versículo",
+    "description": "Lee la primera frase de la Torá (Génesis 1:1).",
+    "content": [
+      {
+        "type": "text",
+        "data": "Es probablemente la frase hebrea más famosa del mundo. Ya tienes todo lo necesario para leerla."
+      },
+      {
+        "type": "hebrew",
+        "data": "בְּרֵאשִׁית",
+        "transliteration": "bereshit",
+        "translation": "en el principio"
+      },
+      {
+        "type": "hebrew",
+        "data": "בָּרָא",
+        "transliteration": "bará",
+        "translation": "creó"
+      },
+      {
+        "type": "hebrew",
+        "data": "אֱלֹהִים",
+        "transliteration": "Elohim",
+        "translation": "Dios"
+      },
+      {
+        "type": "hebrew",
+        "data": "הַשָּׁמַיִם",
+        "transliteration": "hashamáyim",
+        "translation": "los cielos"
+      },
+      {
+        "type": "hebrew",
+        "data": "הָאָרֶץ",
+        "transliteration": "haárets",
+        "translation": "la tierra"
+      },
+      {
+        "type": "tip",
+        "data": "אֵת no se traduce: marca el complemento directo definido."
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "בְּרֵאשִׁית",
+        "options": [
+          "al final",
+          "en la tierra",
+          "en el cielo",
+          "en el principio"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "הַשָּׁמַיִם",
+        "options": [
+          "la tierra",
+          "la luz",
+          "los cielos",
+          "las aguas"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "הָאָרֶץ",
+        "options": [
+          "la casa",
+          "la tierra",
+          "la ciudad",
+          "el mar"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ",
+        "transliteration": "Bereshit bará Elohim et hashamáyim veet haárets.",
+        "translation": "En el principio creó Dios los cielos y la tierra.",
+        "word_count": 7
+      }
+    ],
+    "min_reading_speed": 20
+  },
+  {
+    "id": 26,
+    "day": 26,
+    "week": 4,
+    "title": "Hiné ma tov",
+    "description": "Un versículo de los Salmos (133:1) que se canta en todas las comunidades.",
+    "content": [
+      {
+        "type": "text",
+        "data": "Esta frase se canta en bodas, fiestas y sinagogas de todo el mundo, también en las sefardíes."
+      },
+      {
+        "type": "hebrew",
+        "data": "הִנֵּה",
+        "transliteration": "hiné",
+        "translation": "he aquí, mirad"
+      },
+      {
+        "type": "hebrew",
+        "data": "מַה טּוֹב",
+        "transliteration": "ma tov",
+        "translation": "qué bueno"
+      },
+      {
+        "type": "hebrew",
+        "data": "וּמַה נָּעִים",
+        "transliteration": "umá naím",
+        "translation": "y qué agradable"
+      },
+      {
+        "type": "hebrew",
+        "data": "שֶׁבֶת אַחִים",
+        "transliteration": "shévet ajim",
+        "translation": "que los hermanos vivan"
+      },
+      {
+        "type": "hebrew",
+        "data": "גַּם יָחַד",
+        "transliteration": "gam yájad",
+        "translation": "también juntos"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "טוֹב",
+        "options": [
+          "bueno",
+          "bonito",
+          "grande",
+          "nuevo"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "אַחִים",
+        "options": [
+          "padres",
+          "amigos",
+          "hijos",
+          "hermanos"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "יָחַד",
+        "options": [
+          "siempre",
+          "hoy",
+          "juntos",
+          "solos"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "הִנֵּה מַה טּוֹב וּמַה נָּעִים שֶׁבֶת אַחִים גַּם יָחַד",
+        "transliteration": "Hiné ma tov umá naím shévet ajim gam yájad.",
+        "translation": "Mirad qué bueno y qué agradable es que los hermanos vivan juntos.",
+        "word_count": 9
+      }
+    ],
+    "min_reading_speed": 25
+  },
+  {
+    "id": 27,
+    "day": 27,
+    "week": 4,
+    "title": "Un texto de la vida diaria",
+    "description": "Sara se presenta: tu primer párrafo completo.",
+    "content": [
+      {
+        "type": "hebrew",
+        "data": "גָּרָה",
+        "transliteration": "gará",
+        "translation": "vive (f.)"
+      },
+      {
+        "type": "hebrew",
+        "data": "לִקְרֹא",
+        "transliteration": "likró",
+        "translation": "leer"
+      },
+      {
+        "type": "hebrew",
+        "data": "סְפָרִים",
+        "transliteration": "sfarim",
+        "translation": "libros"
+      },
+      {
+        "type": "hebrew",
+        "data": "בְּעִבְרִית",
+        "transliteration": "be-ivrit",
+        "translation": "en hebreo"
+      },
+      {
+        "type": "tip",
+        "data": "Lee primero frase a frase y después el párrafo entero sin pararte."
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Dónde vive Sara?",
+        "options": [
+          "En Haifa",
+          "En Tel Aviv",
+          "En Jerusalén",
+          "En Sefarad"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "לִקְרֹא",
+        "options": [
+          "leer",
+          "escribir",
+          "vivir",
+          "amar"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "סְפָרִים",
+        "options": [
+          "cuentos",
+          "cartas",
+          "palabras",
+          "libros"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "שָׁלוֹם, שְׁמִי שָׂרָה. אֲנִי גָּרָה בְּתֵל אָבִיב. אֲנִי אוֹהֶבֶת לִקְרֹא סְפָרִים בְּעִבְרִית.",
+        "transliteration": "Shalom, shmí Sará. Aní gará be-Tel Aviv. Aní ohévet likró sfarim be-ivrit.",
+        "translation": "Hola, me llamo Sara. Vivo en Tel Aviv. Me encanta leer libros en hebreo.",
+        "word_count": 12
+      }
+    ],
+    "min_reading_speed": 25
+  },
+  {
+    "id": 28,
+    "day": 28,
+    "week": 4,
+    "title": "Carteles de la calle",
+    "description": "Lee señales reales, sin vocales.",
+    "content": [
+      {
+        "type": "text",
+        "data": "Así verás estas palabras en la calle: sin nikud."
+      },
+      {
+        "type": "hebrew",
+        "data": "כניסה",
+        "transliteration": "knisá",
+        "translation": "entrada"
+      },
+      {
+        "type": "hebrew",
+        "data": "יציאה",
+        "transliteration": "yetsiá",
+        "translation": "salida"
+      },
+      {
+        "type": "hebrew",
+        "data": "פתוח",
+        "transliteration": "patúaj",
+        "translation": "abierto"
+      },
+      {
+        "type": "hebrew",
+        "data": "סגור",
+        "transliteration": "sagur",
+        "translation": "cerrado"
+      },
+      {
+        "type": "hebrew",
+        "data": "רחוב",
+        "transliteration": "rejov",
+        "translation": "calle"
+      },
+      {
+        "type": "hebrew",
+        "data": "שוק",
+        "transliteration": "shuk",
+        "translation": "mercado"
+      },
+      {
+        "type": "hebrew",
+        "data": "עצור",
+        "transliteration": "atsor",
+        "translation": "¡alto! (stop)"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué dice el cartel?",
+        "prompt": "יציאה",
+        "options": [
+          "calle",
+          "cerrado",
+          "salida",
+          "entrada"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué dice el cartel?",
+        "prompt": "סגור",
+        "options": [
+          "mercado",
+          "cerrado",
+          "abierto",
+          "alto"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué dice el cartel?",
+        "prompt": "עצור",
+        "options": [
+          "¡alto!",
+          "salida",
+          "calle",
+          "entrada"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "כניסה, יציאה, פתוח, סגור, רחוב",
+        "transliteration": "Knisá, yetsiá, patúaj, sagur, rejov.",
+        "translation": "Entrada, salida, abierto, cerrado, calle.",
+        "word_count": 5
+      }
+    ],
+    "min_reading_speed": 20
+  },
+  {
+    "id": 29,
+    "day": 29,
+    "week": 4,
+    "title": "Una historia sefardí",
+    "description": "Un párrafo sobre 1492 y la herencia que viajó con los sefardíes.",
+    "content": [
+      {
+        "type": "hebrew",
+        "data": "הַיְּהוּדִים",
+        "transliteration": "hayehudim",
+        "translation": "los judíos"
+      },
+      {
+        "type": "hebrew",
+        "data": "שָׁנִים רַבּוֹת",
+        "transliteration": "shanim rabot",
+        "translation": "muchos años"
+      },
+      {
+        "type": "hebrew",
+        "data": "יָצְאוּ",
+        "transliteration": "yats'u",
+        "translation": "salieron"
+      },
+      {
+        "type": "hebrew",
+        "data": "לָקְחוּ אִתָּם",
+        "transliteration": "lakjú itam",
+        "translation": "se llevaron consigo"
+      },
+      {
+        "type": "hebrew",
+        "data": "הַשָּׂפָה",
+        "transliteration": "hasafá",
+        "translation": "la lengua"
+      },
+      {
+        "type": "hebrew",
+        "data": "הַשִּׁירִים",
+        "transliteration": "hashirim",
+        "translation": "las canciones"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿En qué año salieron los judíos de Sefarad?",
+        "options": [
+          "1392",
+          "1592",
+          "1942",
+          "1492"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta expresión?",
+        "prompt": "שָׁנִים רַבּוֹת",
+        "options": [
+          "un año",
+          "cada semana",
+          "muchos años",
+          "pocos días"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué se llevaron consigo?",
+        "options": [
+          "Nada",
+          "La lengua y las canciones",
+          "Las casas y los libros",
+          "El pan y el vino"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "הַיְּהוּדִים חָיוּ בִּסְפָרַד שָׁנִים רַבּוֹת. בִּשְׁנַת 1492 הֵם יָצְאוּ מִסְּפָרַד, אֲבָל לָקְחוּ אִתָּם אֶת הַשָּׂפָה וְאֶת הַשִּׁירִים.",
+        "transliteration": "Hayehudim jayu bi-Sefarad shanim rabot. Bishnat 1492 hem yats'u mi-Sefarad, aval lakjú itam et hasafá veet hashirim.",
+        "translation": "Los judíos vivieron en Sefarad muchos años. En 1492 salieron de Sefarad, pero se llevaron consigo la lengua y las canciones.",
+        "word_count": 17
+      }
+    ],
+    "min_reading_speed": 30
+  },
+  {
+    "id": 30,
+    "day": 30,
+    "week": 4,
+    "title": "Examen final: ¡ya lees hebreo!",
+    "description": "Treinta días después, demuestra todo lo que sabes.",
+    "content": [
+      {
+        "type": "text",
+        "data": "¡Lo lograste! Este último reto mezcla letras, vocales, vocabulario y lectura sin nikud."
+      },
+      {
+        "type": "tip",
+        "data": "Lee el texto final sin mirar la transliteración. Después compruébala."
+      }
+    ],
+    "exercises": [
+      {
+        "type": "multiple_choice",
+        "question": "¿Cómo suena esta letra?",
+        "prompt": "שׁ",
+        "options": [
+          "sh",
+          "s",
+          "ts",
+          "j"
+        ],
+        "correct": 0
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "מֶלֶךְ",
+        "options": [
+          "perro",
+          "tierra",
+          "ciudad",
+          "rey"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué significa esta palabra?",
+        "prompt": "אֵיפֹה",
+        "options": [
+          "cuándo",
+          "cómo",
+          "dónde",
+          "qué"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "multiple_choice",
+        "question": "¿Qué palabra es?",
+        "prompt": "ספר",
+        "options": [
+          "mercado",
+          "libro",
+          "niño",
+          "calle"
+        ],
+        "correct": 1
+      },
+      {
+        "type": "reading",
+        "question": "Lee en voz alta. Cronometramos tu lectura.",
+        "text": "שלום! היום אני קורא עברית לבד. תודה רבה, ולהתראות!",
+        "transliteration": "¡Shalom! Hayom aní koré ivrit levad. Todá rabá, ulehitraot.",
+        "translation": "¡Hola! Hoy leo hebreo solo. ¡Muchas gracias y hasta luego!",
+        "word_count": 9
+      }
+    ],
+    "min_reading_speed": 30
+  }
+]
