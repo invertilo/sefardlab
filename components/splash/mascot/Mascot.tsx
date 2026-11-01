@@ -1,34 +1,45 @@
-import Image from "next/image";
+"use client";
+
+import { AnimatedMascot, type AmbientMode } from "@/components/mascot/AnimatedMascot";
+import type { MascotAnimationState } from "@/lib/mascot/animations";
 import type { MascotVariant, AnimationState } from "./MascotTypes";
 import "./mascot.css";
 
 interface MascotProps {
+  // Only the classic art exists in the official pack; other variants render it until theirs is delivered.
   variant?: MascotVariant;
   state: AnimationState;
   className?: string;
 }
 
-// Only the classic sprite exists in the official pack; other variants fall back to it until their art is delivered.
-const SPRITES: Partial<Record<MascotVariant, string>> = {
-  classic: "/mascots/sefardlab/owl-classic-128.png",
+const ACTION: Record<AnimationState, MascotAnimationState> = {
+  idle: "idle",
+  enter: "enter",
+  loading: "idle",
+  success: "happy",
+  exit: "exit",
+  error: "doubt",
+};
+
+const AMBIENT: Record<AnimationState, AmbientMode> = {
+  idle: "lively",
+  enter: "none",
+  loading: "lively",
+  success: "none",
+  exit: "none",
+  error: "none",
 };
 
 export function Mascot({ variant = "classic", state, className = "" }: MascotProps) {
-  const src = SPRITES[variant] ?? SPRITES.classic!;
-
   return (
-    <div className={`mascot-container mascot-${state} ${className}`} data-variant={variant}>
+    <div
+      className={`mascot-container mascot-${state} ${className}`}
+      data-variant={variant}
+      role="img"
+      aria-label="Búho de Sefardlab con kipá, gafas doradas y libro hebreo"
+    >
       <div className="mascot-sprite-wrap">
-        <Image
-          src={src}
-          alt="Búho de Sefardlab con kipá, gafas doradas y libro hebreo"
-          width={128}
-          height={128}
-          unoptimized
-          priority
-          draggable={false}
-          className="mascot-sprite"
-        />
+        <AnimatedMascot action={ACTION[state]} ambient={AMBIENT[state]} />
       </div>
       <div className="mascot-shadow" aria-hidden="true" />
 
@@ -37,14 +48,6 @@ export function Mascot({ variant = "classic", state, className = "" }: MascotPro
           <span className="loader-dot" />
           <span className="loader-dot" />
           <span className="loader-dot" />
-        </div>
-      )}
-
-      {state === "success" && (
-        <div className="mascot-success-indicator" aria-hidden="true">
-          <svg viewBox="0 0 24 24" className="check-icon">
-            <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-          </svg>
         </div>
       )}
     </div>

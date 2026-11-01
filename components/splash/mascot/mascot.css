@@ -7,8 +7,6 @@
   flex-direction: column;
   align-items: center;
   width: calc(128px * var(--mascot-scale));
-  /* headroom for hops so the sprite never clips */
-  padding-top: calc(var(--sp) * 4);
   user-select: none;
 }
 
@@ -17,14 +15,15 @@
   z-index: 1;
   width: 100%;
   aspect-ratio: 1;
-  will-change: transform;
 }
 
-.mascot-sprite {
+.mascot-sprite,
+.mascot-canvas {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
   image-rendering: pixelated;
   -webkit-user-drag: none;
   pointer-events: none;
@@ -36,39 +35,16 @@
   margin-top: calc(var(--sp) * -6);
   border-radius: 50%;
   background: rgb(0 0 0 / 0.12);
-  transform-origin: center;
 }
 
-/* Movement snaps to whole sprite pixels (step timing) so the art stays on its grid. */
-
-/* IDLE: one-pixel breath */
-.mascot-idle .mascot-sprite-wrap {
-  animation: mascot-breathe 3.2s step-end infinite;
-}
-.mascot-idle .mascot-shadow {
-  animation: mascot-shadow-breathe 3.2s step-end infinite;
-}
-
-@keyframes mascot-breathe {
-  0% { transform: translateY(0); }
-  45% { transform: translateY(calc(var(--sp) * -1)); }
-  90% { transform: translateY(0); }
-}
-
-@keyframes mascot-shadow-breathe {
-  0% { transform: scaleX(1); }
-  45% { transform: scaleX(0.94); }
-  90% { transform: scaleX(1); }
-}
-
-/* ENTER: rise four sprite pixels while fading in */
+/* Container-level transitions only; the character's own motion is drawn frame by frame. */
 .mascot-enter .mascot-sprite-wrap {
   animation:
-    mascot-enter-rise 480ms steps(4, end) both,
-    mascot-fade-in 480ms ease-out both;
+    mascot-enter-rise 420ms steps(4, end) both,
+    mascot-fade-in 420ms ease-out both;
 }
 .mascot-enter .mascot-shadow {
-  animation: mascot-fade-in 480ms ease-out both;
+  animation: mascot-fade-in 420ms ease-out both;
 }
 
 @keyframes mascot-enter-rise {
@@ -81,75 +57,9 @@
   to { opacity: 1; }
 }
 
-/* LOADING: small pixel hop, then a rest */
-.mascot-loading .mascot-sprite-wrap {
-  animation: mascot-hop 1.4s step-end infinite;
-}
-.mascot-loading .mascot-shadow {
-  animation: mascot-shadow-hop 1.4s step-end infinite;
-}
-
-@keyframes mascot-hop {
-  0% { transform: translateY(0); }
-  6% { transform: translateY(calc(var(--sp) * -2)); }
-  12% { transform: translateY(calc(var(--sp) * -3)); }
-  20% { transform: translateY(calc(var(--sp) * -2)); }
-  26% { transform: translateY(0); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes mascot-shadow-hop {
-  0% { transform: scaleX(1); }
-  6% { transform: scaleX(0.88); }
-  12% { transform: scaleX(0.82); }
-  20% { transform: scaleX(0.88); }
-  26% { transform: scaleX(1); }
-  100% { transform: scaleX(1); }
-}
-
-/* SUCCESS: two quick happy hops */
-.mascot-success .mascot-sprite-wrap {
-  animation: mascot-celebrate 700ms step-end both;
-}
-
-@keyframes mascot-celebrate {
-  0% { transform: translateY(0); }
-  8% { transform: translateY(calc(var(--sp) * -3)); }
-  18% { transform: translateY(calc(var(--sp) * -4)); }
-  28% { transform: translateY(calc(var(--sp) * -3)); }
-  38% { transform: translateY(0); }
-  50% { transform: translateY(calc(var(--sp) * -2)); }
-  62% { transform: translateY(calc(var(--sp) * -3)); }
-  74% { transform: translateY(calc(var(--sp) * -2)); }
-  86% { transform: translateY(0); }
-}
-
-/* ERROR: a gentle one-time doubtful shake */
-.mascot-error .mascot-sprite-wrap {
-  animation: mascot-doubt 600ms step-end both;
-}
-
-@keyframes mascot-doubt {
-  0% { transform: translateX(0); }
-  15% { transform: translateX(calc(var(--sp) * -1)); }
-  30% { transform: translateX(calc(var(--sp) * 1)); }
-  45% { transform: translateX(calc(var(--sp) * -1)); }
-  60% { transform: translateX(0); }
-}
-
-/* EXIT: lift two sprite pixels while fading out */
-.mascot-exit .mascot-sprite-wrap {
-  animation:
-    mascot-exit-lift 360ms steps(2, end) both,
-    mascot-fade-out 360ms ease-in both;
-}
+.mascot-exit .mascot-sprite-wrap,
 .mascot-exit .mascot-shadow {
   animation: mascot-fade-out 360ms ease-in both;
-}
-
-@keyframes mascot-exit-lift {
-  from { transform: translateY(0); }
-  to { transform: translateY(calc(var(--sp) * -2)); }
 }
 
 @keyframes mascot-fade-out {
@@ -177,27 +87,6 @@
   0% { opacity: 0.35; transform: translateY(0); }
   20% { opacity: 1; transform: translateY(calc(var(--sp) * -2)); }
   40% { opacity: 0.35; transform: translateY(0); }
-}
-
-.mascot-success-indicator {
-  position: absolute;
-  z-index: 2;
-  top: calc(var(--sp) * 8);
-  right: calc(var(--sp) * 4);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: var(--success, #276c44);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: mascot-fade-in 300ms ease-out both;
-}
-
-.mascot-success-indicator .check-icon {
-  width: 18px;
-  height: 18px;
 }
 
 @media (min-width: 768px) and (min-height: 700px) {

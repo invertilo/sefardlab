@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { TIMELINES } from "@/lib/mascot/animations";
 import { Mascot } from "./mascot/Mascot";
 import type { MascotVariant, AnimationState } from "./mascot/MascotTypes";
 import "./splash.css";
@@ -12,58 +13,43 @@ interface SplashScreenProps {
   showProgress?: boolean;
 }
 
-export function SplashScreen({
-  isVisible,
-  variant = "classic",
-  message,
-  showProgress = false,
-}: SplashScreenProps) {
-  const [hasEntered, setHasEntered] = useState(false);
-  const [isExiting, setIsExiting] = useState(false);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const previousVisibleRef = useRef(isVisible);
+type Phase = "hidden" | Extract<AnimationState, "enter" | "loading" | "success" | "exit">;
 
-  const shouldRender = isVisible || isExiting;
+const ENTER_MS = TIMELINES.enter.duration;
+const SUCCESS_MS = TIMELINES.happy.duration;
+const EXIT_MS = 400;
 
-  const animationState: AnimationState = isVisible
-    ? hasEntered
-      ? "loading"
-      : "enter"
-    : "exit";
+export function SplashScreen({ isVisible, variant = "classic", message, showProgress = false }: SplashScreenProps) {
+  const [phase, setPhase] = useState<Phase>("hidden");
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const previousVisibleRef = useRef(false);
 
-  // Manejar transiciones (solo en callbacks)
   useEffect(() => {
-    if (timerRef.current) clearTimeout(timerRef.current);
-
-    // Detectar cambio de isVisible
     const wasVisible = previousVisibleRef.current;
     previousVisibleRef.current = isVisible;
+    const schedule = (ms: number, next: Phase) => timers.current.push(setTimeout(() => setPhase(next), ms));
 
     if (!wasVisible && isVisible) {
-      // Acaba de hacerse visible
-      setIsExiting(false);
-      timerRef.current = setTimeout(() => {
-        setHasEntered(true);
-      }, 600);
+      timers.current.forEach(clearTimeout);
+      timers.current = [];
+      schedule(0, "enter");
+      schedule(ENTER_MS, "loading");
     } else if (wasVisible && !isVisible) {
-      // Acaba de ocultarse
-      setHasEntered(false);
-      setIsExiting(true);
-      timerRef.current = setTimeout(() => {
-        setIsExiting(false);
-      }, 400);
+      timers.current.forEach(clearTimeout);
+      timers.current = [];
+      schedule(0, "success");
+      schedule(SUCCESS_MS, "exit");
+      schedule(SUCCESS_MS + EXIT_MS, "hidden");
     }
-
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    };
   }, [isVisible]);
 
-  if (!shouldRender) return null;
+  useEffect(() => () => timers.current.forEach(clearTimeout), []);
+
+  if (phase === "hidden") return null;
 
   return (
     <div
-      className={`splash-overlay ${isVisible ? "splash-visible" : "splash-hidden"}`}
+      className={`splash-overlay ${phase === "exit" ? "splash-hidden" : "splash-visible"}`}
       role="status"
       aria-live="polite"
       aria-label={message || "Cargando..."}
@@ -72,14 +58,14 @@ export function SplashScreen({
         <div className="splash-background" />
 
         <div className="splash-content">
-          <Mascot variant={variant} state={animationState} className="mascot-lg" />
+          <Mascot variant={variant} state={phase} className="mascot-lg" />
 
           <h1 className="splash-title">Sefardlab</h1>
           <p className="splash-subtitle">Aprende hebreo, una letra a la vez</p>
 
           {message && <p className="splash-message">{message}</p>}
 
-          {showProgress && (
+          {showProgress && phase === "loading" && (
             <div className="splash-progress">
               <div className="progress-bar" />
             </div>

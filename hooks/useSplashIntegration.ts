@@ -32,7 +32,7 @@ export function useSplashIntegration() {
 
       showTimeoutRef.current = setTimeout(() => {
         hide();
-      }, 3000);
+      }, 1200);
     }, 250);
 
     return () => {
