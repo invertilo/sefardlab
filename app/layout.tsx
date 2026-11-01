@@ -42,15 +42,6 @@ export const viewport: Viewport = {
   ],
 };
 
-export const icons = {
-  icon: [
-    {
-      url: "/logo.svg",
-      type: "image/svg+xml",
-    },
-  ],
-};
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="es" className={`${inter.variable} ${poppins.variable} ${notoHebrew.variable}`}>

@@ -70,14 +70,6 @@
   }
 }
 
-.splash-mascot {
-  width: 100%;
-  max-width: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .splash-title {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
@@ -177,10 +169,6 @@
 
   .splash-message {
     font-size: 0.8125rem;
-  }
-
-  .splash-mascot {
-    max-width: 200px;
   }
 }
 

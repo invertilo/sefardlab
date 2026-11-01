@@ -72,7 +72,7 @@ export function SplashScreen({
         <div className="splash-background" />
 
         <div className="splash-content">
-          <Mascot variant={variant} state={animationState} className="splash-mascot" />
+          <Mascot variant={variant} state={animationState} className="mascot-lg" />
 
           <h1 className="splash-title">Sefardlab</h1>
           <p className="splash-subtitle">Aprende hebreo, una letra a la vez</p>

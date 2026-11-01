@@ -40,9 +40,7 @@ export function Hero() {
         </div>
 
         <div id="demo" className="scroll-mt-24 flex justify-center lg:justify-end">
-          <div className="w-full max-w-xs">
-            <Mascot variant="classic" state="idle" />
-          </div>
+          <Mascot variant="classic" state="idle" className="mascot-lg" />
         </div>
       </Container>
     </section>

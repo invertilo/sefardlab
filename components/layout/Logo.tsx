@@ -2,16 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-/** Logo búho de Sefardlab */
 export function LogoMark({ className }: { className?: string }) {
   return (
     <Image
-      src="/logo.svg"
-      alt="Logo Sefardlab"
-      width={40}
-      height={40}
-      className={cn("size-10 shrink-0", className)}
+      src="/mascots/sefardlab/owl-classic-128.png"
+      alt=""
+      width={128}
+      height={128}
+      unoptimized
       priority
+      className={cn("size-10 shrink-0", className)}
     />
   );
 }
