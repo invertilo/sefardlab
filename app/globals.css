@@ -152,6 +152,8 @@
   --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
   /* Desaceleración larga, tipo iOS: arranca rápido y aterriza sin rebote. */
   --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Estándar: sin el arranque brusco de --ease-out-soft, para fundidos de opacidad. */
+  --ease-fade: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ==========================================================================
@@ -159,6 +161,7 @@
    ========================================================================== */
 :root {
   --motion-route: 260ms;
+  --motion-route-enter: 440ms;
   --motion-route-rise: 10px;
   --motion-reveal: 420ms;
   --motion-reveal-rise: 12px;
@@ -321,9 +324,13 @@
     transform: translate3d(0, var(--motion-route-rise), 0);
   }
 }
-@keyframes reveal-rise {
+@keyframes reveal-fade {
   from {
     opacity: 0;
+  }
+}
+@keyframes reveal-slide {
+  from {
     transform: translate3d(0, var(--motion-reveal-rise), 0);
   }
 }
@@ -331,18 +338,22 @@
 @layer components {
   @media (prefers-reduced-motion: no-preference) {
     .route-enter > :where(:not(.splash-overlay)) {
-      animation: route-enter var(--motion-route) var(--ease-out-soft) backwards;
+      animation: route-enter var(--motion-route-enter) var(--ease-fade) backwards;
     }
 
     /* Bloques de la sección (los esqueletos de carga, role="status", no se escalonan). */
     :where([data-stagger]) > :where(:not([role="status"])) > :where(*) {
-      animation: reveal-rise var(--motion-reveal) var(--ease-emphasized) backwards;
+      animation:
+        reveal-fade var(--motion-reveal) var(--ease-fade) backwards,
+        reveal-slide var(--motion-reveal) var(--ease-emphasized) backwards;
       animation-delay: calc(var(--motion-route) * 0.4 + var(--stagger-i, 0) * var(--motion-stagger-section));
     }
 
     /* Elementos de cuadrícula: después de su bloque, con escalón corto. */
     :where([data-stagger]) :where(ul.grid, ol.grid, dl.grid) > :where(*) {
-      animation: reveal-rise var(--motion-reveal) var(--ease-emphasized) backwards;
+      animation:
+        reveal-fade var(--motion-reveal) var(--ease-fade) backwards,
+        reveal-slide var(--motion-reveal) var(--ease-emphasized) backwards;
       animation-delay: calc(
         var(--motion-route) * 0.4 + var(--stagger-i, 0) * var(--motion-stagger-section) + 80ms +
           var(--stagger-j, 0) * var(--motion-stagger-item)

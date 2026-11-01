@@ -19,6 +19,8 @@ const ENTER_MS = TIMELINES.enter.duration;
 const SUCCESS_MS = TIMELINES.happy.duration;
 /** Debe cubrir la salida escalonada de splash.css (contenido → fondo → desenfoque). */
 const EXIT_MS = 560;
+/** La página empieza a entrar cuando el velo ya está a medio disolver, no al principio de la salida. */
+const EXIT_RELEASE_MS = 340;
 
 /**
  * Fases: enter → loading → success → exit. `isVisible` lo controla
@@ -54,8 +56,14 @@ export function SplashScreen({ isVisible, variant = "classic", message, showProg
 
   useEffect(() => {
     const root = document.documentElement;
-    if (phase === "hidden" || phase === "exit") delete root.dataset.splash;
-    else root.dataset.splash = phase;
+    if (phase === "hidden") {
+      delete root.dataset.splash;
+      return;
+    }
+    root.dataset.splash = phase;
+    if (phase !== "exit") return;
+    const release = setTimeout(() => delete root.dataset.splash, EXIT_RELEASE_MS);
+    return () => clearTimeout(release);
   }, [phase]);
 
   useEffect(() => () => void delete document.documentElement.dataset.splash, []);

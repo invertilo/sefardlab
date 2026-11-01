@@ -154,7 +154,7 @@
   /* Entrada: el fondo se funde (sin corte al cambiar de ruta) y el texto sube en cascada. */
   .splash-overlay[data-phase="enter"] .splash-backdrop,
   .splash-overlay[data-phase="enter"] .splash-surface {
-    animation: splash-fade-in 240ms ease-out backwards;
+    animation: splash-fade-in 360ms var(--ease-fade) backwards;
   }
 
   .splash-overlay[data-phase="enter"] .splash-title,
