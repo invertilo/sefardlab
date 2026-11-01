@@ -54,7 +54,7 @@ export function UserHeader({ user, xpTotal, streak }: UserHeaderProps) {
               <span className="sr-only">{formatNumber(xpTotal)}</span> XP
             </span>
             <span className="inline-flex items-center gap-1">
-              <span aria-hidden="true">🔥</span>
+              <Icon name="fire" size={16} className="text-accent-strong" motion={streak > 0 ? "loop" : "none"} />
               <span className="tabular-nums text-text">{streak}</span> {streak === 1 ? "día de racha" : "días de racha"}
             </span>
           </p>

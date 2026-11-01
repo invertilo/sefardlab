@@ -150,6 +150,21 @@
   --shadow-3: var(--shadow-3);
 
   --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Desaceleración larga, tipo iOS: arranca rápido y aterriza sin rebote. */
+  --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Motion tokens: duraciones cortas, solo transform y opacity.
+   ========================================================================== */
+:root {
+  --motion-route: 260ms;
+  --motion-route-rise: 10px;
+  --motion-reveal: 420ms;
+  --motion-reveal-rise: 12px;
+  /* Escalón entre bloques de sección y entre elementos de una cuadrícula. */
+  --motion-stagger-section: 60ms;
+  --motion-stagger-item: 35ms;
 }
 
 @layer base {
@@ -285,4 +300,74 @@
 }
 @utility animate-flicker {
   animation: flicker 1.6s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   Entrada de rutas y de secciones
+   - `.route-enter` (app/(app)/template.tsx, app/(auth)/template.tsx): la página
+     nueva se funde y sube 10px. Se anima el hijo, no el contenedor, para no
+     crear un bloque contenedor que rompa elementos `position: fixed`; y con
+     `backwards` no queda ningún transform aplicado al terminar.
+   - `[data-stagger]` (panel, insignias, ajustes): los bloques de la página
+     entran en cascada y, dentro, los elementos de cada cuadrícula. Escalones
+     con tope para que nada tarde más de ~0,5 s en empezar.
+   Todo en `@layer components` y con `:where()` para que cualquier utilidad
+   `animate-*` de un componente tenga prioridad. Sin movimiento con
+   prefers-reduced-motion (además del corte global de arriba).
+   ========================================================================== */
+@keyframes route-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--motion-route-rise), 0);
+  }
+}
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--motion-reveal-rise), 0);
+  }
+}
+
+@layer components {
+  @media (prefers-reduced-motion: no-preference) {
+    .route-enter > :where(:not(.splash-overlay)) {
+      animation: route-enter var(--motion-route) var(--ease-out-soft) backwards;
+    }
+
+    /* Bloques de la sección (los esqueletos de carga, role="status", no se escalonan). */
+    :where([data-stagger]) > :where(:not([role="status"])) > :where(*) {
+      animation: reveal-rise var(--motion-reveal) var(--ease-emphasized) backwards;
+      animation-delay: calc(var(--motion-route) * 0.4 + var(--stagger-i, 0) * var(--motion-stagger-section));
+    }
+
+    /* Elementos de cuadrícula: después de su bloque, con escalón corto. */
+    :where([data-stagger]) :where(ul.grid, ol.grid, dl.grid) > :where(*) {
+      animation: reveal-rise var(--motion-reveal) var(--ease-emphasized) backwards;
+      animation-delay: calc(
+        var(--motion-route) * 0.4 + var(--stagger-i, 0) * var(--motion-stagger-section) + 80ms +
+          var(--stagger-j, 0) * var(--motion-stagger-item)
+      );
+    }
+
+    /* Mientras el splash cubre la pantalla, la entrada espera y se ve al disolverse. */
+    :root[data-splash] .route-enter > *,
+    :root[data-splash] [data-stagger] > * > *,
+    :root[data-splash] [data-stagger] :is(ul.grid, ol.grid, dl.grid) > * {
+      animation-play-state: paused;
+    }
+  }
+
+  :where([data-stagger]) > * > :nth-child(2) { --stagger-i: 1; }
+  :where([data-stagger]) > * > :nth-child(3) { --stagger-i: 2; }
+  :where([data-stagger]) > * > :nth-child(4) { --stagger-i: 3; }
+  :where([data-stagger]) > * > :nth-child(5) { --stagger-i: 4; }
+  :where([data-stagger]) > * > :nth-child(n + 6) { --stagger-i: 5; }
+
+  :where([data-stagger]) :is(ul.grid, ol.grid, dl.grid) > :nth-child(2) { --stagger-j: 1; }
+  :where([data-stagger]) :is(ul.grid, ol.grid, dl.grid) > :nth-child(3) { --stagger-j: 2; }
+  :where([data-stagger]) :is(ul.grid, ol.grid, dl.grid) > :nth-child(4) { --stagger-j: 3; }
+  :where([data-stagger]) :is(ul.grid, ol.grid, dl.grid) > :nth-child(5) { --stagger-j: 4; }
+  :where([data-stagger]) :is(ul.grid, ol.grid, dl.grid) > :nth-child(6) { --stagger-j: 5; }
+  :where([data-stagger]) :is(ul.grid, ol.grid, dl.grid) > :nth-child(7) { --stagger-j: 6; }
+  :where([data-stagger]) :is(ul.grid, ol.grid, dl.grid) > :nth-child(n + 8) { --stagger-j: 7; }
 }

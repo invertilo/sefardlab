@@ -1,46 +1,59 @@
+/* ==========================================================================
+   Splash: capas independientes para que la salida sea un desenfoque que se
+   disuelve en la página, no un corte.
+     .splash-backdrop  vidrio esmerilado sobre la página (lo último en irse)
+     .splash-surface   fondo opaco con un halo suave (se va antes)
+     .splash-content   búho + textos, con entrada escalonada
+   Solo se animan transform y opacity. Todo se desactiva con prefers-reduced-motion.
+   ========================================================================== */
+
 .splash-overlay {
+  --splash-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --splash-rise: 8px;
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: var(--bg, #faf7f2);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
-  opacity: 1;
-  visibility: visible;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .splash-overlay.splash-hidden {
-  opacity: 0;
-  visibility: hidden;
   pointer-events: none;
 }
 
-.splash-overlay.splash-visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-@media (prefers-color-scheme: dark) {
-  .splash-overlay:not([data-theme="light"]) {
-    background-color: var(--bg, #0e1a24);
-  }
-}
-
+.splash-backdrop,
+.splash-surface,
 .splash-background {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 1px 1px, var(--text-muted, #4a5868) 0.5px, transparent 0.5px);
-  background-size: 20px 20px;
-  opacity: 0.03;
   pointer-events: none;
+}
+
+.splash-backdrop {
+  z-index: -3;
+  background-color: color-mix(in srgb, var(--bg) 70%, transparent);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  backdrop-filter: blur(24px) saturate(1.4);
+}
+
+.splash-surface {
+  z-index: -2;
+  background-color: var(--bg);
+  background-image: radial-gradient(56% 44% at 50% 40%, var(--primary-soft), transparent 72%);
+}
+
+.splash-background {
+  z-index: -1;
+  background-image: radial-gradient(circle at 1px 1px, var(--text-muted) 0.5px, transparent 0.5px);
+  background-size: 20px 20px;
+  opacity: 0.04;
 }
 
 .splash-container {
   position: relative;
-  z-index: 1;
   width: 100%;
   display: flex;
   align-items: center;
@@ -53,132 +66,179 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 12px;
   max-width: 400px;
   text-align: center;
-  animation: splash-content-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-@keyframes splash-content-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* El búho necesita aire; los textos van juntos como un solo bloque. */
+.splash-content > .mascot-container {
+  margin-bottom: 12px;
 }
 
 .splash-title {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  color: var(--primary, #1b4965);
+  color: var(--primary);
   margin: 0;
   letter-spacing: -0.02em;
-  font-family: var(--font-poppins, sans-serif);
-  animation: splash-title-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+  font-family: var(--font-display);
 }
 
 .splash-subtitle {
-  font-size: clamp(0.875rem, 2vw, 1.125rem);
-  color: var(--text-muted, #4a5868);
+  font-size: clamp(0.9375rem, 2vw, 1.125rem);
+  color: var(--text-muted);
   margin: 0;
   font-weight: 500;
   line-height: 1.5;
-  animation: splash-subtitle-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
 }
 
 .splash-message {
-  font-size: clamp(0.875rem, 1.5vw, 1rem);
-  color: var(--text, #16222c);
-  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--text);
+  margin: 4px 0 0;
   line-height: 1.6;
   max-width: 320px;
-  animation: splash-message-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
 }
 
-@keyframes splash-title-in {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes splash-subtitle-in {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes splash-message-in {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* --------------------------------------------------------------------------
+   Progreso: indeterminado mientras carga, se completa al terminar de verdad.
+   -------------------------------------------------------------------------- */
 .splash-progress {
-  width: 100%;
-  max-width: 200px;
+  position: relative;
+  width: 160px;
   height: 3px;
-  background-color: var(--border, #e3ded4);
-  border-radius: 2px;
+  margin-top: 12px;
+  border-radius: 999px;
+  background-color: var(--border);
   overflow: hidden;
-  margin-top: 8px;
+}
+
+.progress-bar,
+.progress-fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: var(--primary);
 }
 
 .progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, var(--secondary, #e8b441) 0%, var(--primary, #1b4965) 50%, var(--secondary, #e8b441) 100%);
-  background-size: 200% 100%;
-  animation: progress-shimmer 1.5s ease-in-out infinite;
+  width: 40%;
+  /* Reposo (sin movimiento): segmento centrado. */
+  transform: translateX(75%);
 }
 
-@keyframes progress-shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+.progress-fill {
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.splash-progress[data-state="done"] .progress-bar {
+  opacity: 0;
+}
+
+.splash-progress[data-state="done"] .progress-fill {
+  transform: scaleX(1);
 }
 
 @media (max-width: 640px) {
-  .splash-content {
-    gap: 16px;
-    padding: 0 16px;
-  }
-
   .splash-title {
     font-size: 1.75rem;
   }
+}
 
-  .splash-subtitle {
-    font-size: 0.875rem;
+/* --------------------------------------------------------------------------
+   Movimiento
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  /* Entrada: el fondo se funde (sin corte al cambiar de ruta) y el texto sube en cascada. */
+  .splash-overlay[data-phase="enter"] .splash-backdrop,
+  .splash-overlay[data-phase="enter"] .splash-surface {
+    animation: splash-fade-in 240ms ease-out backwards;
   }
 
-  .splash-message {
-    font-size: 0.8125rem;
+  .splash-overlay[data-phase="enter"] .splash-title,
+  .splash-overlay[data-phase="enter"] .splash-subtitle,
+  .splash-overlay[data-phase="enter"] .splash-message {
+    animation: splash-rise 560ms var(--splash-ease) backwards;
+  }
+  .splash-overlay[data-phase="enter"] .splash-title {
+    animation-delay: 120ms;
+  }
+  .splash-overlay[data-phase="enter"] .splash-subtitle {
+    animation-delay: 180ms;
+  }
+  .splash-overlay[data-phase="enter"] .splash-message {
+    animation-delay: 240ms;
+  }
+
+  .splash-progress {
+    animation: splash-fade-in 320ms ease-out backwards;
+  }
+
+  .progress-bar {
+    animation: progress-indeterminate 1.3s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  .progress-fill {
+    transition: transform 420ms var(--splash-ease);
+  }
+
+  .splash-progress[data-state="done"] .progress-bar {
+    animation: none;
+    transition: opacity 160ms ease-out;
+  }
+
+  /* Salida: primero el contenido, luego el fondo, y al final el desenfoque. */
+  .splash-content {
+    transition:
+      opacity 220ms ease-in,
+      transform 360ms var(--splash-ease);
+  }
+  .splash-surface {
+    transition: opacity 320ms ease-out 60ms;
+  }
+  .splash-backdrop {
+    transition: opacity 420ms ease-out 140ms;
+  }
+
+  /* La versión de servidor (loading.tsx) solo aparece si la carga tarda: sin destellos. */
+  .splash-overlay[data-fallback] .splash-backdrop,
+  .splash-overlay[data-fallback] .splash-surface,
+  .splash-overlay[data-fallback] .splash-container {
+    animation: splash-fade-in 280ms ease-out 150ms backwards;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .splash-content,
-  .splash-title,
-  .splash-subtitle,
-  .splash-message,
-  .progress-bar {
-    animation: none !important;
+.splash-overlay[data-phase="exit"] .splash-content {
+  opacity: 0;
+  /* Sin escala: el búho es pixel art y no debe reinterpolarse. */
+  transform: translateY(-8px);
+}
+.splash-overlay[data-phase="exit"] .splash-surface,
+.splash-overlay[data-phase="exit"] .splash-backdrop {
+  opacity: 0;
+}
+
+@keyframes splash-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes splash-rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--splash-rise));
+  }
+}
+
+@keyframes progress-indeterminate {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
   }
 }
 

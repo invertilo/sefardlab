@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/ui/Icon";
 import { Card } from "@/components/ui/Card";
 import { cn } from "@/lib/utils";
 import { usePreviousVisit } from "./hooks";
@@ -20,7 +21,7 @@ function streakMessage(streak: number): string {
   return "¡Racha mensual! Treinta días seguidos leyendo hebreo.";
 }
 
-/** Racha grande con 🔥 × días. Tiembla cuando aumenta respecto a la última visita. */
+/** Racha grande con llama animada × días. Tiembla cuando aumenta respecto a la última visita. */
 export function StreakCounter({ streak, userId, className }: StreakCounterProps) {
   const previous = usePreviousVisit<number>(`sefardlab:streak:${userId}`, streak);
   const increased = previous !== null && streak > previous;
@@ -35,12 +36,11 @@ export function StreakCounter({ streak, userId, className }: StreakCounterProps)
         <span
           aria-hidden="true"
           className={cn(
-            "grid size-16 shrink-0 place-items-center rounded-2xl text-4xl",
-            streak > 0 ? "bg-accent-soft" : "bg-surface-sunken grayscale",
-            streak > 0 && "motion-safe:animate-flicker",
+            "grid size-16 shrink-0 place-items-center rounded-2xl",
+            streak > 0 ? "bg-accent-soft text-accent-strong" : "bg-surface-sunken text-muted",
           )}
         >
-          🔥
+          <Icon name="fire" size={36} motion={streak > 0 ? "loop" : "none"} />
         </span>
         <p className={cn("m-0 flex items-baseline gap-2", increased && "motion-safe:animate-shake")}>
           <span className="font-display text-5xl font-bold tabular-nums leading-none">{streak}</span>
@@ -48,8 +48,10 @@ export function StreakCounter({ streak, userId, className }: StreakCounterProps)
         </p>
       </div>
       {flames > 0 && (
-        <p className="m-0 text-xl leading-none tracking-wide" aria-hidden="true">
-          {"🔥".repeat(flames)}
+        <p className="m-0 flex items-center gap-1 text-accent-strong" aria-hidden="true">
+          {Array.from({ length: flames }, (_, i) => (
+            <Icon key={i} name="fire" size={20} motion="none" />
+          ))}
           {streak > MAX_FLAMES && <span className="ms-1 text-sm font-semibold text-muted">×{streak}</span>}
         </p>
       )}

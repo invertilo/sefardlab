@@ -27,8 +27,12 @@ export function AchievementBadge({ achievement, unlocked, fresh = false, delay =
         fresh && "motion-safe:animate-pop-in",
       )}
     >
-      <span className={cn(/[\u0590-\u05FF]/.test(achievement.glyph) && "font-hebrew font-bold", !unlocked && "opacity-40 grayscale")}>
-        {achievement.glyph}
+      <span className={cn(!unlocked && "opacity-40 grayscale")}>
+        {"letter" in achievement.visual ? (
+          <span className="font-hebrew font-bold">{achievement.visual.letter}</span>
+        ) : (
+          <Icon name={achievement.visual.icon} size={size === "lg" ? 36 : 26} motion={unlocked ? "hover" : "none"} />
+        )}
       </span>
       {!unlocked && (
         <span className="absolute -bottom-1 -right-1 grid size-6 place-items-center rounded-full border border-border bg-surface text-muted">

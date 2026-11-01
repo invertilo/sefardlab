@@ -96,7 +96,7 @@ export function LessonDemo() {
                 onClick={() => choose(option)}
                 aria-disabled={answered || undefined}
                 className={cn(
-                  "flex min-h-12 items-center justify-center gap-1.5 rounded-lg border-[1.5px] border-b-[3px] border-border bg-surface text-sm font-medium text-text transition-colors",
+                  "flex min-h-12 items-center justify-center gap-1.5 rounded-xl border-[1.5px] border-b-[3px] border-border bg-surface text-sm font-medium text-text transition-[background-color,border-color,transform] duration-150 motion-safe:active:translate-y-px motion-safe:active:scale-[0.98]",
                   !answered && "cursor-pointer hover:border-primary hover:bg-primary-soft",
                   answered && isAnswer && "border-success bg-success-soft",
                   answered && isPicked && !isAnswer && "border-accent-strong bg-accent-soft",
@@ -119,7 +119,7 @@ export function LessonDemo() {
               <button
                 type="button"
                 onClick={next}
-                className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-primary px-4 text-sm font-medium text-on-primary hover:bg-primary-hover"
+                className="inline-flex min-h-11 items-center gap-1.5 rounded-xl bg-primary px-4 text-sm font-medium text-on-primary shadow-1 transition-[background-color,transform] duration-150 hover:bg-primary-hover motion-safe:active:scale-[0.97]"
               >
                 {index === items.length - 1 ? "Repetir" : "Siguiente"}
                 <Icon name="arrow" size={16} />

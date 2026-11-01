@@ -17,7 +17,7 @@ type ActivityHeatmapProps = {
   className?: string;
 };
 
-/** Calendario de la última semana: verde con ✓ si completó lección, gris si no. */
+/** Calendario de la última semana: verde con marca si completó lección, gris si no. */
 export function ActivityHeatmap({ days, className }: ActivityHeatmapProps) {
   const active = days.filter((d) => d.lessons > 0).length;
   const lastIndex = days.length - 1;

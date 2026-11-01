@@ -8,7 +8,7 @@ export function FinalCta() {
   return (
     <section aria-labelledby="cta-title" className="pt-20 text-center">
       <Container>
-        <div className="relative flex flex-col items-center gap-6 overflow-hidden rounded-[1.25rem] border border-border bg-surface px-6 py-16 shadow-2">
+        <div className="relative flex flex-col items-center gap-6 overflow-hidden rounded-3xl border border-border/70 bg-surface px-6 py-16 shadow-2 md:py-20">
           <TilePattern id="tile-cta" className="text-secondary opacity-[0.12] [mask-image:radial-gradient(circle_at_center,transparent_35%,#000_90%)]" />
           <span lang="he" dir="rtl" className="relative font-hebrew text-2xl font-bold text-accent-strong">
             בּוֹאוּ נַתְחִיל

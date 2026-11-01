@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { LessonPlayer, LessonSkeleton } from "@/components/lesson/LessonPlayer";
 import { parseLessonDay, TOTAL_DAYS } from "@/lib/lesson";
+import { LessonSwipe } from "./LessonSwipe";
 
 type Props = PageProps<"/lesson/[id]">;
 
@@ -38,5 +39,10 @@ async function Lesson({ params }: Pick<Props, "params">) {
   if (day === null) notFound();
 
   // `key`: cada día es una lección nueva, sin arrastrar estado de la anterior.
-  return <LessonPlayer key={day} day={day} />;
+  // `LessonSwipe`: deslizar a la izquierda avanza de paso (igual que el botón visible).
+  return (
+    <LessonSwipe>
+      <LessonPlayer key={day} day={day} />
+    </LessonSwipe>
+  );
 }

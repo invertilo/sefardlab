@@ -14,7 +14,7 @@ const iconTone = {
 
 function FeatureIcon({ name, tone }: { name: IconName; tone: keyof typeof iconTone }) {
   return (
-    <span className={cn("grid size-12 place-items-center rounded-xl", iconTone[tone])}>
+    <span className={cn("grid size-12 place-items-center rounded-2xl shadow-1", iconTone[tone])}>
       <Icon name={name} />
     </span>
   );
@@ -60,7 +60,7 @@ export function Features() {
         <Timeline />
 
         <div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-6">
-          <Card as="article" padding="lg" className="flex flex-col gap-4 lg:col-span-4">
+          <Card as="article" interactive padding="lg" className="flex flex-col gap-4 lg:col-span-4">
             <div className="flex items-center justify-between gap-3">
               <FeatureIcon name="book" tone="primary" />
               <Badge variant="primary">{alefato.days}</Badge>
@@ -86,7 +86,7 @@ export function Features() {
             </div>
           </Card>
 
-          <Card as="article" padding="lg" className="flex flex-col gap-4 lg:col-span-2">
+          <Card as="article" interactive padding="lg" className="flex flex-col gap-4 lg:col-span-2">
             <div className="flex items-center justify-between gap-3">
               <FeatureIcon name="star" tone="secondary" />
               <Badge variant="secondary">{palabras.days}</Badge>
@@ -108,7 +108,7 @@ export function Features() {
             </div>
           </Card>
 
-          <Card as="article" padding="lg" className="flex flex-col gap-4 lg:col-span-3">
+          <Card as="article" interactive padding="lg" className="flex flex-col gap-4 lg:col-span-3">
             <div className="flex items-center justify-between gap-3">
               <FeatureIcon name="fire" tone="accent" />
               <Badge variant="accent">{frases.days}</Badge>
@@ -123,7 +123,7 @@ export function Features() {
             </div>
           </Card>
 
-          <Card as="article" padding="lg" className="flex flex-col gap-4 lg:col-span-3">
+          <Card as="article" interactive padding="lg" className="flex flex-col gap-4 lg:col-span-3">
             <div className="flex items-center justify-between gap-3">
               <FeatureIcon name="trophy" tone="primary" />
               <Badge variant="success">{lectura.days}</Badge>

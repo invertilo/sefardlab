@@ -1,3 +1,5 @@
+import type { IconName } from "@/components/ui/Icon";
+
 /**
  * Catálogo de las 12 insignias. Las desbloquea la BD
  * (`public.award_achievements`, db/migrations/002_gamification.sql); aquí solo
@@ -43,7 +45,7 @@ export type AchievementDefinition = {
   name: string;
   description: string;
   /** Glifo decorativo de la insignia. */
-  glyph: string;
+  visual: { letter: string } | { icon: IconName };
   /** Unidad para el texto de progreso («3/7 lecciones»). */
   unit: string;
   progress: (facts: AchievementFacts) => AchievementProgress;
@@ -64,7 +66,7 @@ export const ACHIEVEMENTS: readonly AchievementDefinition[] = [
     id: "primer_alef",
     name: "Primer Álef",
     description: "Completa la lección 1.",
-    glyph: "א",
+    visual: { letter: "א" },
     unit: "lección",
     progress: dayDone(1),
   },
@@ -72,7 +74,7 @@ export const ACHIEVEMENTS: readonly AchievementDefinition[] = [
     id: "alfabeto_completo",
     name: "Alfabeto Completo",
     description: "Completa el día 7 y cierra la fase del alfabeto.",
-    glyph: "🔤",
+    visual: { icon: "type" },
     unit: "lección",
     progress: dayDone(7),
   },
@@ -80,7 +82,7 @@ export const ACHIEVEMENTS: readonly AchievementDefinition[] = [
     id: "lector_palabras",
     name: "Lector de Palabras",
     description: "Lee 50 palabras en hebreo.",
-    glyph: "📖",
+    visual: { icon: "book" },
     unit: "palabras",
     progress: (f) => ({ current: f.wordsRead, target: 50 }),
   },
@@ -88,7 +90,7 @@ export const ACHIEVEMENTS: readonly AchievementDefinition[] = [
     id: "semana_2",
     name: "Semana 2 Completada",
     description: "Termina todas las lecciones de la semana 2.",
-    glyph: "🗓️",
+    visual: { icon: "calendar" },
     unit: "lecciones",
     progress: weekDone(2),
   },
@@ -96,7 +98,7 @@ export const ACHIEVEMENTS: readonly AchievementDefinition[] = [
     id: "lector_fluido",
     name: "Lector Fluido",
     description: "Completa todas las lecciones de la semana 3.",
-    glyph: "🌊",
+    visual: { icon: "waves" },
     unit: "lecciones",
     progress: weekDone(3),
   },
@@ -104,7 +106,7 @@ export const ACHIEVEMENTS: readonly AchievementDefinition[] = [
     id: "velocidad",
     name: "Velocidad",
     description: "Lee a 100 palabras por minuto o más.",
-    glyph: "⚡",
+    visual: { icon: "bolt" },
     unit: "ppm",
     progress: (f) => ({ current: f.bestReadingSpeed, target: 100 }),
   },
@@ -112,7 +114,7 @@ export const ACHIEVEMENTS: readonly AchievementDefinition[] = [
     id: "racha_semanal",
     name: "Racha Semanal",
     description: "Completa lecciones 7 días seguidos.",
-    glyph: "🔥",
+    visual: { icon: "fire" },
     unit: "días",
     progress: (f) => ({ current: f.streak, target: 7 }),
   },
@@ -120,7 +122,7 @@ export const ACHIEVEMENTS: readonly AchievementDefinition[] = [
     id: "racha_mensual",
     name: "Racha Mensual",
     description: "Completa lecciones 30 días seguidos.",
-    glyph: "☄️",
+    visual: { icon: "medal" },
     unit: "días",
     progress: (f) => ({ current: f.streak, target: 30 }),
   },
@@ -128,7 +130,7 @@ export const ACHIEVEMENTS: readonly AchievementDefinition[] = [
     id: "perfeccionista",
     name: "Perfeccionista",
     description: "Termina una semana entera con 100% de precisión en cada lección.",
-    glyph: "🎯",
+    visual: { icon: "target" },
     unit: "lecciones perfectas",
     progress: (f) => {
       // La semana más cercana a estar perfecta.
@@ -140,7 +142,7 @@ export const ACHIEVEMENTS: readonly AchievementDefinition[] = [
     id: "culturista",
     name: "Culturista",
     description: "Aprende sobre Sefarad: completa «Palabras de Sefarad» y «Una historia sefardí».",
-    glyph: "🏛️",
+    visual: { icon: "landmark" },
     unit: "lecciones",
     progress: (f) => ({ current: CULTURE_DAYS.filter((d) => f.completedDays.has(d)).length, target: CULTURE_DAYS.length }),
   },
@@ -148,7 +150,7 @@ export const ACHIEVEMENTS: readonly AchievementDefinition[] = [
     id: "maestro",
     name: "Maestro",
     description: "Completa el día 30 del reto.",
-    glyph: "🎓",
+    visual: { icon: "graduation" },
     unit: "lección",
     progress: dayDone(30),
   },
@@ -156,7 +158,7 @@ export const ACHIEVEMENTS: readonly AchievementDefinition[] = [
     id: "lector_legendario",
     name: "Lector Legendario",
     description: "Lee 1000 palabras en hebreo en total (los repasos cuentan).",
-    glyph: "👑",
+    visual: { icon: "crown" },
     unit: "palabras",
     progress: (f) => ({ current: f.wordsRead, target: 1000 }),
   },

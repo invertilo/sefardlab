@@ -6,19 +6,22 @@ export type ButtonVariant = "primary" | "secondary" | "accent" | "outline" | "gh
 export type ButtonSize = "sm" | "md" | "lg";
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "border-transparent bg-primary text-on-primary hover:bg-primary-hover",
-  secondary: "border-transparent bg-secondary text-on-secondary hover:bg-secondary-hover",
-  accent: "border-transparent bg-accent-strong text-on-accent hover:brightness-95",
+  primary:
+    "border-transparent bg-primary text-on-primary shadow-1 hover:bg-primary-hover hover:shadow-2 active:shadow-none",
+  secondary:
+    "border-transparent bg-secondary text-on-secondary shadow-1 hover:bg-secondary-hover hover:shadow-2 active:shadow-none",
+  accent:
+    "border-transparent bg-accent-strong text-on-accent shadow-1 hover:brightness-95 hover:shadow-2 active:shadow-none",
   outline:
-    "border-border-strong bg-transparent text-text hover:border-primary hover:bg-primary-soft",
-  ghost: "border-transparent bg-transparent text-text hover:bg-surface-sunken",
+    "border-border-strong bg-transparent text-text hover:border-primary hover:bg-primary-soft active:bg-primary-soft",
+  ghost: "border-transparent bg-transparent text-text hover:bg-surface-sunken active:bg-surface-sunken",
 };
 
 const sizes: Record<ButtonSize, string> = {
   // Todos los tamaños respetan un objetivo táctil mínimo de 44px salvo `sm` (36px, uso denso).
-  sm: "min-h-9 px-3 text-sm rounded-lg",
-  md: "min-h-11 px-5 text-base rounded-lg",
-  lg: "min-h-13 px-7 text-lg rounded-xl",
+  sm: "min-h-9 px-3 text-sm rounded-xl",
+  md: "min-h-11 px-5 text-base rounded-xl",
+  lg: "min-h-13 px-7 text-lg rounded-2xl",
 };
 
 export function buttonClasses({
@@ -34,7 +37,7 @@ export function buttonClasses({
 } = {}) {
   return cn(
     "inline-flex select-none items-center justify-center gap-2 border-[1.5px] font-medium leading-none no-underline",
-    "transition-[background-color,border-color,transform,filter] duration-150 ease-out-soft active:scale-[0.98]",
+    "transition-[background-color,border-color,transform,filter,box-shadow] duration-200 ease-out-soft motion-safe:active:scale-[0.97] motion-safe:active:duration-75",
     "disabled:pointer-events-none disabled:opacity-50",
     variants[variant],
     sizes[size],

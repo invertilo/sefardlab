@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useId } from "react";
+import { Icon } from "@/components/ui/Icon";
 import { ACHIEVEMENTS, type AchievementId } from "@/lib/achievements";
 import { routes } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -79,7 +80,10 @@ export function AchievementGrid({ unlocked, userId, className }: AchievementGrid
               >
                 <strong className="block text-sm">{a.name}</strong>
                 {a.description}
-                <span className="mt-1 block font-semibold">{isUnlocked ? "✓ Desbloqueada" : "🔒 Bloqueada"}</span>
+                <span className="mt-1 block font-semibold"><span className="inline-flex items-center gap-1">
+                    <Icon name={isUnlocked ? "check" : "lock"} size={12} />
+                    {isUnlocked ? "Desbloqueada" : "Bloqueada"}
+                  </span></span>
               </span>
             </li>
           );

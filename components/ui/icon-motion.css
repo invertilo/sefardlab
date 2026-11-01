@@ -1,0 +1,146 @@
+/* Micro-animaciones de iconos. Solo transform, opacity y stroke-dashoffset.
+   Se activan al pasar el ratón / foco sobre un enlace, botón o [data-icon-host]
+   que contenga el icono, o sobre el propio icono. Desactivadas con reduced motion. */
+
+.sl-icon {
+  overflow: visible;
+}
+.sl-icon .p {
+  transform-origin: 12px 12px;
+  transition:
+    transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 220ms ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Dibujado de trazo al montar (cambio de estado: aparece el check, la x...) */
+  .sl-icon[data-draw] .draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: sl-draw 380ms cubic-bezier(0.2, 0.8, 0.2, 1) 40ms forwards;
+  }
+  .sl-icon[data-draw] .draw-2 {
+    animation-delay: 150ms;
+  }
+
+  /* Fuego: parpadeo continuo opcional (racha activa) */
+  .sl-icon[data-loop] .flame {
+    animation: sl-flicker 1.8s ease-in-out infinite;
+    transform-origin: 12px 21px;
+  }
+  .sl-icon[data-loop] .flame-in {
+    animation: sl-flicker 1.3s ease-in-out infinite reverse;
+    transform-origin: 12px 21px;
+  }
+
+  /* Disparadores: enlace, botón, summary o [data-icon-host] con hover/foco */
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="arrow"] .p,
+  .sl-icon[data-name="arrow"]:hover .p {
+    transform: translateX(3px);
+  }
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="settings"] .p,
+  .sl-icon[data-name="settings"]:hover .p {
+    transform: rotate(60deg);
+    transition-duration: 600ms;
+  }
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="star"] .p,
+  .sl-icon[data-name="star"]:hover .p {
+    transform: rotate(14deg) scale(1.1);
+  }
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="book"] .p,
+  .sl-icon[data-name="book"]:hover .p {
+    transform: scaleX(1.08);
+  }
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="lock"] .shackle,
+  .sl-icon[data-name="lock"]:hover .shackle {
+    transform: translateY(-1.5px);
+  }
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="fire"] .p,
+  .sl-icon[data-name="fire"]:hover .p {
+    animation: sl-flicker 0.9s ease-in-out infinite;
+    transform-origin: 12px 21px;
+  }
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="clock"] .hand,
+  .sl-icon[data-name="clock"]:hover .hand {
+    transform: rotate(120deg);
+    transform-origin: 12px 13px;
+    transition-duration: 700ms;
+  }
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="bolt"] .p,
+  .sl-icon[data-name="bolt"]:hover .p {
+    transform: scale(1.12) rotate(-6deg);
+  }
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="calendar"] .tick,
+  .sl-icon[data-name="calendar"]:hover .tick {
+    transform: translateY(-1.5px);
+  }
+
+  /* Trofeo: brillo que cruza la copa */
+  .sl-icon[data-name="trophy"] .spark {
+    opacity: 0;
+    transform: scale(0.4);
+    transform-origin: 19.5px 3.5px;
+  }
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="trophy"] .spark,
+  .sl-icon[data-name="trophy"]:hover .spark,
+  .sl-icon[data-name="trophy"][data-loop] .spark {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .sl-icon[data-name="trophy"][data-loop] .spark {
+    animation: sl-twinkle 2.4s ease-in-out infinite;
+  }
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="trophy"] .cup,
+  .sl-icon[data-name="trophy"]:hover .cup {
+    transform: translateY(-1px) rotate(-3deg);
+    transform-origin: 12px 20px;
+  }
+
+  /* Volumen: las ondas aparecen en cascada */
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="volume"] .w1,
+  .sl-icon[data-name="volume"]:hover .w1 {
+    animation: sl-wave 900ms ease-in-out infinite;
+  }
+  :is(a, button, summary, [data-icon-host]):not(:disabled):is(:hover, :focus-visible) .sl-icon[data-name="volume"] .w2,
+  .sl-icon[data-name="volume"]:hover .w2 {
+    animation: sl-wave 900ms ease-in-out 180ms infinite;
+  }
+}
+
+@keyframes sl-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes sl-flicker {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(1.05, 0.96) rotate(-2deg);
+  }
+  60% {
+    transform: scale(0.97, 1.05) rotate(2deg);
+  }
+}
+@keyframes sl-twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
+}
+@keyframes sl-wave {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}

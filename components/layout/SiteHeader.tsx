@@ -12,7 +12,7 @@ const nav = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-bg/85 backdrop-blur-md backdrop-saturate-150">
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-bg/80 backdrop-blur-xl backdrop-saturate-150">
       <Container className="flex min-h-16 items-center justify-between gap-4">
         <Logo />
         <nav aria-label="Principal" className="hidden gap-1 md:flex">
@@ -20,7 +20,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="inline-flex min-h-11 items-center rounded-lg px-4 font-medium text-muted no-underline hover:bg-surface-sunken hover:text-text"
+              className="inline-flex min-h-11 items-center rounded-full px-4 text-[0.9375rem] font-medium text-muted no-underline transition-colors duration-200 hover:bg-surface-sunken hover:text-text"
             >
               {item.label}
             </Link>
