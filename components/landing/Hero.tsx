@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { Container } from "@/components/layout/Container";
+import { Mascot } from "@/components/splash/mascot/Mascot";
 import { routes } from "@/lib/site";
 import { Eyebrow } from "./Eyebrow";
-import { LessonDemo } from "./LessonDemo";
 import { TilePattern } from "./TilePattern";
 
 export function Hero() {
@@ -30,7 +30,7 @@ export function Hero() {
               <Icon name="arrow" size={20} />
             </Button>
             <Button href="#demo" variant="outline" size="lg" className="w-full sm:w-auto">
-              Probar una lección
+              Ver más
             </Button>
           </div>
           <p className="flex items-center gap-2 text-sm text-muted">
@@ -39,8 +39,10 @@ export function Hero() {
           </p>
         </div>
 
-        <div id="demo" className="scroll-mt-24">
-          <LessonDemo />
+        <div id="demo" className="scroll-mt-24 flex justify-center lg:justify-end">
+          <div className="w-full max-w-xs">
+            <Mascot variant="classic" state="idle" />
+          </div>
         </div>
       </Container>
     </section>
