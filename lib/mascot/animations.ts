@@ -38,8 +38,6 @@ export interface Timeline {
   keys: ReadonlyArray<readonly [ms: number, patch: PosePatch]>;
   /** Natural blinks may play over this action. */
   allowBlink: boolean;
-  /** Breathing keeps going underneath this action. */
-  breathing: boolean;
   /** Pose shown instead of the timeline when the user prefers reduced motion. */
   still: PosePatch;
 }
@@ -61,7 +59,7 @@ const BLINK_KEYS = [
 ] as const;
 
 export const TIMELINES: Record<MascotAction, Timeline> = {
-  blink: { duration: 150, keys: BLINK_KEYS, allowBlink: false, breathing: true, still: {} },
+  blink: { duration: 150, keys: BLINK_KEYS, allowBlink: false, still: {} },
 
   "look-left": {
     duration: 1100,
@@ -70,7 +68,6 @@ export const TIMELINES: Record<MascotAction, Timeline> = {
       [1000, { eyes: "open" }],
     ],
     allowBlink: true,
-    breathing: true,
     still: { eyes: "look-left" },
   },
 
@@ -81,7 +78,6 @@ export const TIMELINES: Record<MascotAction, Timeline> = {
       [1000, { eyes: "open" }],
     ],
     allowBlink: true,
-    breathing: true,
     still: { eyes: "look-right" },
   },
 
@@ -102,7 +98,6 @@ export const TIMELINES: Record<MascotAction, Timeline> = {
       [2000, { head: { angle: 0 } }],
     ],
     allowBlink: false,
-    breathing: true,
     still: { eyes: "look-down", head: { angle: -2 } },
   },
 
@@ -120,23 +115,20 @@ export const TIMELINES: Record<MascotAction, Timeline> = {
       [1000, { wing: { angle: 0, dy: 0 } }],
     ],
     allowBlink: true,
-    breathing: false,
     still: { wing: { angle: -6, dy: -2 } },
   },
 
   happy: {
     duration: 950,
     keys: [
-      [0, { eyes: "happy", wing: { angle: -4, dy: -1 }, head: { angle: 1 }, sparkle: 1 }],
-      [90, { wing: { angle: -8, dy: -2 }, head: { angle: 2 } }],
-      [200, { sparkle: 2 }],
-      [330, { sparkle: 1 }],
-      [460, { sparkle: 2, wing: { angle: -4, dy: -1 }, head: { angle: 1 } }],
-      [600, { sparkle: 0, wing: { angle: 0, dy: 0 }, head: { angle: 0 } }],
-      [850, { eyes: "open" }],
+      [0, { eyes: "half", sparkle: 1 }],
+      [70, { eyes: "happy", wing: { angle: -2, dy: 0 } }],
+      [150, { wing: { angle: -4, dy: -1 }, head: { angle: 1 } }],
+      [260, { wing: { angle: -6, dy: -2 }, head: { angle: 2 }, sparkle: 2 }],
+      [800, { wing: { angle: -4, dy: -1 }, head: { angle: 1 } }],
+      [880, { sparkle: 0, wing: { angle: 0, dy: 0 }, head: { angle: 0 }, eyes: "open" }],
     ],
     allowBlink: false,
-    breathing: false,
     still: { eyes: "happy", sparkle: 1 },
   },
 
@@ -150,7 +142,6 @@ export const TIMELINES: Record<MascotAction, Timeline> = {
       [900, { eyes: "open", head: { angle: 0 } }],
     ],
     allowBlink: false,
-    breathing: true,
     still: { eyes: "look-left", head: { angle: -2 } },
   },
 
@@ -162,7 +153,6 @@ export const TIMELINES: Record<MascotAction, Timeline> = {
       [330, { eyes: "open" }],
     ],
     allowBlink: false,
-    breathing: false,
     still: {},
   },
 
@@ -173,7 +163,6 @@ export const TIMELINES: Record<MascotAction, Timeline> = {
       [60, { eyes: "closed" }],
     ],
     allowBlink: false,
-    breathing: false,
     still: { eyes: "closed" },
   },
 };
@@ -190,11 +179,8 @@ export const AMBIENT_TILT: Timeline = {
     [1270, { head: { angle: 0 } }],
   ],
   allowBlink: true,
-  breathing: true,
   still: {},
 };
-
-export const BREATH_PERIOD = 2600;
 
 export function applyPatch(pose: Pose, patch: PosePatch): Pose {
   return {

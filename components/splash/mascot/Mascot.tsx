@@ -24,7 +24,7 @@ const ACTION: Record<AnimationState, MascotAnimationState> = {
 const AMBIENT: Record<AnimationState, AmbientMode> = {
   idle: "lively",
   enter: "none",
-  loading: "lively",
+  loading: "calm",
   success: "none",
   exit: "none",
   error: "none",
@@ -39,7 +39,9 @@ export function Mascot({ variant = "classic", state, className = "" }: MascotPro
       aria-label="Búho de Sefardlab con kipá, gafas doradas y libro hebreo"
     >
       <div className="mascot-sprite-wrap">
-        <AnimatedMascot action={ACTION[state]} ambient={AMBIENT[state]} />
+        <div className="mascot-breath">
+          <AnimatedMascot action={ACTION[state]} ambient={AMBIENT[state]} />
+        </div>
       </div>
       <div className="mascot-shadow" aria-hidden="true" />
 

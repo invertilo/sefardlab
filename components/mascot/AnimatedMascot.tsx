@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import {
   AMBIENT_TILT,
-  BREATH_PERIOD,
   NEUTRAL,
   TIMELINES,
   applyPatch,
@@ -155,11 +154,6 @@ export function AnimatedMascot({ action = "idle", actionId = 0, ambient = "calm"
         : e.auto;
 
       let pose = active ? sampleTimeline(active.timeline, now - active.start) : NEUTRAL;
-
-      if (!active || active.timeline.breathing) {
-        const breath = Math.floor((now % BREATH_PERIOD) / (BREATH_PERIOD / 2));
-        pose = applyPatch(pose, { head: { dy: pose.head.dy + breath }, wing: { dy: pose.wing.dy + breath } });
-      }
 
       if (!active || active.timeline.allowBlink) {
         if (!e.nextBlinkAt) e.nextBlinkAt = now + between(1500, 3000);
