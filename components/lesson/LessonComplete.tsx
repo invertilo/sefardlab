@@ -131,7 +131,7 @@ export function LessonComplete({
       <div className="flex w-full flex-col gap-2 sm:flex-row-reverse">
         {/* No se avanza hasta que el resultado esté guardado en la BD. */}
         {saved ? (
-          <Button href={isFinal ? routes.dashboard : routes.lesson(day + 1)} size="lg" fullWidth>
+          <Button href={isFinal ? routes.dashboard : routes.lesson(day + 1)} size="lg" fullWidth data-swipe="next">
             {nextLabel}
             <Icon name={isFinal ? "trophy" : "arrow"} size={20} />
           </Button>

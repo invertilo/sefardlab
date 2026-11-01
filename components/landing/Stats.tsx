@@ -11,14 +11,14 @@ const program = [
 export function Stats() {
   return (
     <section
-      id="comunidad"
-      aria-labelledby="comunidad-title"
+      id="programa"
+      aria-labelledby="programa-title"
       className="scroll-mt-16 bg-band py-20 text-on-band [&_h2]:text-on-band"
     >
       <Container>
         <SectionHead
-          eyebrow="Comunidad"
-          id="comunidad-title"
+          eyebrow="Programa"
+          id="programa-title"
           title="Un método con fecha de fin."
           className="[&>p]:text-on-band-muted [&>span]:text-secondary"
         >

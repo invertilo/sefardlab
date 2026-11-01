@@ -7,7 +7,7 @@ import { Logo } from "./Logo";
 const nav = [
   { href: "/#metodo", label: "Método" },
   { href: "/#demo", label: "Pruébalo" },
-  { href: "/#comunidad", label: "Comunidad" },
+  { href: "/#programa", label: "Programa" },
 ];
 
 export function SiteHeader() {

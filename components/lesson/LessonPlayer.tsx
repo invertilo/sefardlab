@@ -172,7 +172,7 @@ export function LessonPlayer({ day }: { day: number }) {
                 ? `¿Listo? Practica con ${total} ${total === 1 ? "ejercicio" : "ejercicios"}.`
                 : "Esta lección no tiene ejercicios."}
             </p>
-            <Button size="lg" onClick={start} className="w-full sm:w-auto">
+            <Button size="lg" data-swipe="next" onClick={start} className="w-full sm:w-auto">
               {total > 0 ? "Empezar ejercicios" : "Completar lección"}
               <Icon name="arrow" size={20} />
             </Button>

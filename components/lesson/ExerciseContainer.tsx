@@ -120,6 +120,7 @@ export function ExerciseContainer({
         <Button
           size="lg"
           fullWidth
+          data-swipe="next"
           onClick={handleNext}
           aria-disabled={!answered || undefined}
           disabled={disabled}
