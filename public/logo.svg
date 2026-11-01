@@ -1,0 +1,69 @@
+<svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background transparent -->
+
+  <!-- Owl Body -->
+  <ellipse cx="250" cy="280" rx="120" ry="140" fill="#8B6F47"/>
+
+  <!-- Owl Chest/Face -->
+  <ellipse cx="250" cy="300" rx="90" ry="110" fill="#F5E6D3"/>
+
+  <!-- Head -->
+  <circle cx="250" cy="150" rx="100" ry="110" fill="#A68B5B"/>
+
+  <!-- Head center -->
+  <ellipse cx="250" cy="160" rx="75" ry="90" fill="#F5E6D3"/>
+
+  <!-- Kipá (Hat) -->
+  <path d="M 170 120 Q 250 80 330 120 Q 310 140 250 150 Q 190 140 170 120" fill="#1B4965"/>
+  <circle cx="250" cy="100" r="8" fill="#E8B441"/>
+  <circle cx="210" cy="130" r="5" fill="#E8B441"/>
+  <circle cx="290" cy="130" r="5" fill="#E8B441"/>
+
+  <!-- Ears/Tufts -->
+  <path d="M 160 110 Q 145 80 150 40 Q 160 90 170 120 Z" fill="#8B6F47"/>
+  <path d="M 340 110 Q 355 80 350 40 Q 340 90 330 120 Z" fill="#8B6F47"/>
+
+  <!-- Eyes - Left -->
+  <circle cx="200" cy="130" r="28" fill="white"/>
+  <circle cx="205" cy="135" r="18" fill="#E8B441"/>
+  <circle cx="208" cy="135" r="12" fill="#1a1a1a"/>
+  <circle cx="210" cy="130" r="4" fill="white"/>
+
+  <!-- Eyes - Right -->
+  <circle cx="300" cy="130" r="28" fill="white"/>
+  <circle cx="295" cy="135" r="18" fill="#E8B441"/>
+  <circle cx="292" cy="135" r="12" fill="#1a1a1a"/>
+  <circle cx="290" cy="130" r="4" fill="white"/>
+
+  <!-- Glasses Frame - Left -->
+  <circle cx="200" cy="130" r="32" fill="none" stroke="#E8B441" stroke-width="4"/>
+
+  <!-- Glasses Frame - Right -->
+  <circle cx="300" cy="130" r="32" fill="none" stroke="#E8B441" stroke-width="4"/>
+
+  <!-- Glasses Bridge -->
+  <line x1="232" y1="130" x2="268" y2="130" stroke="#E8B441" stroke-width="4"/>
+
+  <!-- Beak -->
+  <path d="M 250 170 L 245 185 L 255 185 Z" fill="#E8B441"/>
+
+  <!-- Cheeks -->
+  <circle cx="165" cy="150" r="15" fill="#F4A7A5" opacity="0.6"/>
+  <circle cx="335" cy="150" r="15" fill="#F4A7A5" opacity="0.6"/>
+
+  <!-- Wings/Arms -->
+  <path d="M 170 280 Q 140 300 150 340 Q 165 310 180 290 Z" fill="#8B6F47"/>
+  <path d="M 330 280 Q 360 300 350 340 Q 335 310 320 290 Z" fill="#8B6F47"/>
+
+  <!-- Book -->
+  <rect x="220" y="320" width="60" height="80" fill="#1B4965" rx="4"/>
+  <rect x="225" y="330" width="50" height="4" fill="#E8B441"/>
+  <text x="250" y="375" font-size="48" fill="#E8B441" text-anchor="middle" font-weight="bold">א</text>
+
+  <!-- Feet -->
+  <circle cx="220" cy="420" r="12" fill="#E8B441"/>
+  <circle cx="280" cy="420" r="12" fill="#E8B441"/>
+
+  <!-- Shadow -->
+  <ellipse cx="250" cy="450" rx="130" ry="20" fill="#00000015"/>
+</svg>
