@@ -12,36 +12,27 @@
   width: 100%;
   height: 100%;
   image-rendering: pixelated;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
-/* IDLE */
+/* IDLE - Subtle breathing and blinking */
 .mascot-idle {
-  animation: mascot-breathe 3s ease-in-out infinite;
+  animation: mascot-breathe 3.5s ease-in-out infinite;
 }
 
-.mascot-idle .owl-wing-left {
-  animation: wing-flutter-left 4s ease-in-out infinite;
-  transform-origin: 65px 135px;
-}
-
-.mascot-idle .owl-wing-right {
-  animation: wing-flutter-right 4s ease-in-out infinite;
-  transform-origin: 135px 135px;
+.mascot-idle .owl-base {
+  animation: mascot-idle-sway 4s ease-in-out infinite;
 }
 
 @keyframes mascot-breathe {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-3px); }
+  50% { transform: translateY(-2px); }
 }
 
-@keyframes wing-flutter-left {
-  0%, 100% { transform: rotateZ(0deg); }
-  50% { transform: rotateZ(2deg); }
-}
-
-@keyframes wing-flutter-right {
-  0%, 100% { transform: rotateZ(0deg); }
-  50% { transform: rotateZ(-2deg); }
+@keyframes mascot-idle-sway {
+  0%, 100% { transform: translateX(0px); }
+  25% { transform: translateX(1px); }
+  75% { transform: translateX(-1px); }
 }
 
 /* ENTER */
