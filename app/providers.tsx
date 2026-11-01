@@ -2,6 +2,8 @@
 
 import { QueryClient, QueryClientProvider, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createContext, useCallback, useContext, useMemo, type ReactNode } from "react";
+import { PreferencesProvider } from "@/lib/contexts/PreferencesContext";
+import { SplashProvider } from "@/components/splash/SplashProvider";
 import { ApiError, api, queryKeys } from "@/lib/api-client";
 import type { AuthUser, LoginResponse, SignupResponse, UserStats } from "@/lib/api-types";
 import type { LoginInput, SignupInput } from "@/lib/validation";
@@ -176,9 +178,13 @@ export function Providers({ children }: { children: ReactNode }) {
   const queryClient = getQueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <UserProvider>{children}</UserProvider>
-      </AuthProvider>
+      <PreferencesProvider>
+        <SplashProvider>
+          <AuthProvider>
+            <UserProvider>{children}</UserProvider>
+          </AuthProvider>
+        </SplashProvider>
+      </PreferencesProvider>
     </QueryClientProvider>
   );
 }

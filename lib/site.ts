@@ -11,6 +11,7 @@ export const routes = {
   signup: "/signup",
   dashboard: "/dashboard",
   achievements: "/achievements",
+  settings: "/settings",
   lesson: (id: string | number) => `/lesson/${id}`,
 } as const;
 

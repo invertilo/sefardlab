@@ -46,9 +46,20 @@
 
 ### 🎨 Diseño Profesional
 - Interfaz minimalista y moderna
-- Tema claro/oscuro automático
-- Totalmente responsivo (móvil, tablet, desktop)
+- **Tema claro/oscuro/sistema** personalizable (Fase 5)
+- Totalmente responsivo (375px, 768px, 1280px)
+- Accesibilidad WCAG AA (contraste ≥4.5:1)
 - Paleta heredada de la cultura sefardí
+- Animaciones suaves (respetan prefers-reduced-motion)
+
+### ⚙️ Panel de Ajustes (Fase 5)
+- 🎨 **Tema:** Claro, Oscuro, o Sistema
+- 📝 **Tamaño de fuente:** Pequeño (14px), Normal (16px), Grande (18px)
+- 🌐 **Idioma:** Español, English, עברית
+- 🔊 **Sonido:** Toggle para efectos de sonido
+- 🔔 **Notificaciones:** Toggle para recordatorios
+- 🔓 **Logout:** Cerrar sesión segura
+- 💾 **Persistencia:** Todas las preferencias se guardan en localStorage
 
 ---
 
@@ -124,65 +135,81 @@ sefardlab-nextjs/
 ├── app/
 │   ├── layout.tsx              # Root layout
 │   ├── page.tsx                # Landing page
-│   ├── (auth)/
+│   ├── globals.css             # Design tokens + animaciones
+│   ├── providers.tsx           # Contextos (Auth, User, Preferences)
+│   ├── (auth)/                 # Rutas públicas
 │   │   ├── layout.tsx
 │   │   ├── login/page.tsx
 │   │   ├── signup/page.tsx
 │   │   └── callback/page.tsx
-│   ├── (app)/
+│   ├── (app)/                  # Rutas protegidas (requieren sesión)
 │   │   ├── layout.tsx
 │   │   ├── dashboard/page.tsx
 │   │   ├── lesson/[id]/page.tsx
-│   │   ├── profile/page.tsx
-│   │   └── settings/page.tsx
-│   ├── api/
-│   │   ├── auth/
-│   │   ├── lessons/
-│   │   ├── progress/
-│   │   └── achievements/
-│   ├── globals.css
-│   └── providers.tsx
+│   │   ├── achievements/page.tsx
+│   │   └── settings/page.tsx   # ⭐ NUEVA
+│   └── api/
+│       ├── auth/
+│       ├── lessons/
+│       ├── progress/
+│       ├── user/
+│       └── health/
 ├── components/
-│   ├── ui/                     # Button, Card, Badge, Input, Select
-│   ├── lesson/                 # LessonCard, ExerciseComponent
-│   ├── dashboard/              # ProgressBar, Streak, XPBar
-│   ├── layout/                 # Header, Footer, Sidebar
-│   ├── auth/                   # LoginForm, SignupForm
-│   └── landing/                # Hero, Features, Stats
+│   ├── ui/                     # Button, Card, Badge, Input, Select, Icon
+│   ├── lesson/                 # Componentes de lecciones
+│   ├── dashboard/              # Dashboard, XPBar, StreakCounter
+│   ├── settings/               # ⭐ SettingsView (nuevo)
+│   ├── layout/                 # Container, Logo, Header, Footer
+│   ├── auth/                   # LoginForm, SignupForm, LogoutButton
+│   └── landing/                # Hero, Features, Stats, LessonDemo
 ├── lib/
+│   ├── contexts/               # ⭐ PreferencesContext (nuevo)
+│   ├── hooks/                  # useAuth, useProgress, useUser, useLesson
+│   ├── api-client.ts          # Cliente API con TanStack Query
+│   ├── api-server.ts          # Funciones del servidor
+│   ├── api-types.ts           # Tipos TypeScript
 │   ├── supabase.ts            # Cliente Supabase
-│   ├── hooks/                 # useAuth, useProgress, useUser
-│   ├── utils.ts               # Utilidades
+│   ├── utils.ts               # Utilidades (cn, etc)
 │   ├── validation.ts          # Zod schemas
-│   └── constants.ts           # Datos de lecciones (30 días)
+│   ├── gamification.ts        # Lógica de insignias y XP
+│   ├── lesson.ts              # Datos de lecciones (30 días)
+│   ├── site.ts                # Rutas y config del sitio
+│   └── database.types.ts      # Tipos generados Supabase
 ├── public/
 │   ├── logo.png               # Logo profesional
 │   └── icons/                 # SVG icons (book, star, fire, etc)
 ├── db/
-│   ├── migrations/            # SQL migrations
-│   ├── seed.json              # Datos de 30 lecciones
-│   └── seed.ts                # Script para insertar datos
+│   └── seed.ts                # Script para seed de datos
+├── scripts/
+│   └── check-contrast.mjs      # Verificar contraste WCAG AA
+├── public/
+│   └── icons/                 # Íconos SVG
+├── CONTRIBUTING.md            # ⭐ Guía de contribución (nueva)
+├── SETUP.md                   # ⭐ Guía de setup (nueva)
+├── TESTING_CHECKLIST.md       # ⭐ Checklist de testing (nueva)
 ├── .env.local.example
 └── package.json
 ```
 
 ---
 
-## 🎯 Roadmap
+## 🎯 Estado del Proyecto (Fase 5 - Completa)
 
-- [x] Landing page profesional
-- [x] Design system Tailwind
-- [x] Estructura Next.js
-- [x] Sistema de autenticación Supabase
-- [x] Base de datos PostgreSQL
-- [ ] Dashboard con progreso real
-- [ ] Componentes de lección interactivos
+### ✅ Completado
+- [x] **Fase 1:** Landing page profesional
+- [x] **Fase 2:** Design system Tailwind + componentes
+- [x] **Fase 3:** Estructura Next.js + autenticación Supabase
+- [x] **Fase 4:** Dashboard, lecciones, achievements, gamificación
+- [x] **Fase 5:** Página Settings, pulido final, testing
+
+### 🎯 Futuro
 - [ ] Sistema de audio/pronunciación
 - [ ] Exportar progreso (PDF)
 - [ ] Modo offline
 - [ ] App móvil (React Native)
 - [ ] Comunidad y foros
 - [ ] Certificado digital
+- [ ] Integraciones con redes sociales
 
 ---
 

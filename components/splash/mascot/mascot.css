@@ -1,0 +1,454 @@
+/* ===================================================================
+   Mascot Animations - SVG Pixel Art Owl
+   =================================================================== */
+
+.mascot-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1;
+}
+
+.mascot-svg {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* ===================================================================
+   IDLE State - Base animation (gentle breathing)
+   =================================================================== */
+
+.mascot-idle {
+  animation: mascot-idle-breathe 3s ease-in-out infinite;
+}
+
+.mascot-idle .owl-wing-left {
+  animation: wing-idle-left 4s ease-in-out infinite;
+  transform-origin: 65px 135px;
+}
+
+.mascot-idle .owl-wing-right {
+  animation: wing-idle-right 4s ease-in-out infinite;
+  transform-origin: 135px 135px;
+}
+
+.mascot-idle .eyelids {
+  animation: eyelids-blink 4s steps(1, end) infinite;
+}
+
+@keyframes mascot-idle-breathe {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.01);
+  }
+}
+
+@keyframes wing-idle-left {
+  0%,
+  100% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(-2deg);
+  }
+  75% {
+    transform: rotateZ(2deg);
+  }
+}
+
+@keyframes wing-idle-right {
+  0%,
+  100% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(2deg);
+  }
+  75% {
+    transform: rotateZ(-2deg);
+  }
+}
+
+@keyframes eyelids-blink {
+  0%,
+  92%,
+  100% {
+    opacity: 0;
+  }
+  5%,
+  87% {
+    opacity: 1;
+  }
+}
+
+/* ===================================================================
+   ENTER State - Fade and scale in
+   =================================================================== */
+
+.mascot-enter {
+  animation: mascot-enter-animation 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes mascot-enter-animation {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ===================================================================
+   LOADING State - Contextual animations per variant
+   =================================================================== */
+
+.mascot-loading {
+  animation: mascot-loading-bob 1.5s ease-in-out infinite;
+}
+
+/* Classic variant loading */
+.mascot-classic.mascot-loading .owl-wing-left {
+  animation: wing-teaching-gesture 1.5s ease-in-out infinite;
+  transform-origin: 65px 135px;
+}
+
+.mascot-classic.mascot-loading .eyelids {
+  animation: eyelids-reading 1.5s ease-in-out infinite;
+}
+
+/* Sefardi variant loading */
+.mascot-sefardi.mascot-loading {
+  animation: mascot-sefardi-reading 2s ease-in-out infinite;
+}
+
+/* Developer variant loading */
+.mascot-developer.mascot-loading {
+  animation: mascot-developer-typing 1.2s ease-in-out infinite;
+}
+
+/* Student variant loading */
+.mascot-student.mascot-loading {
+  animation: mascot-student-reading 1.8s ease-in-out infinite;
+}
+
+/* Master variant loading */
+.mascot-master.mascot-loading {
+  animation: mascot-master-teaching 2s ease-in-out infinite;
+}
+
+/* Gamification variant loading */
+.mascot-gamification.mascot-loading {
+  animation: mascot-gamification-bounce 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+@keyframes mascot-loading-bob {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes wing-teaching-gesture {
+  0%,
+  100% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(-15deg);
+  }
+  75% {
+    transform: rotateZ(15deg);
+  }
+}
+
+@keyframes eyelids-reading {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes mascot-sefardi-reading {
+  0%,
+  100% {
+    transform: rotateY(0deg) translateY(0);
+  }
+  50% {
+    transform: rotateY(-5deg) translateY(-4px);
+  }
+}
+
+@keyframes mascot-developer-typing {
+  0%,
+  50%,
+  100% {
+    transform: scaleX(1) translateY(0);
+  }
+  25% {
+    transform: scaleX(0.98) translateY(-2px);
+  }
+}
+
+@keyframes mascot-student-reading {
+  0%,
+  100% {
+    transform: rotateZ(-2deg) translateY(0);
+  }
+  50% {
+    transform: rotateZ(2deg) translateY(-6px);
+  }
+}
+
+@keyframes mascot-master-teaching {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-4px) scale(1.02);
+  }
+  50% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes mascot-gamification-bounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-16px) scale(1.05);
+  }
+}
+
+/* ===================================================================
+   SUCCESS State - Small celebration gesture
+   =================================================================== */
+
+.mascot-success {
+  animation: mascot-success-pulse 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.mascot-success .owl-wing-left,
+.mascot-success .owl-wing-right {
+  animation: wings-celebrate 0.8s ease-in-out;
+}
+
+@keyframes mascot-success-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes wings-celebrate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(-25deg);
+  }
+  50% {
+    transform: rotateZ(25deg);
+  }
+  75% {
+    transform: rotateZ(-15deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+/* ===================================================================
+   EXIT State - Fade and scale out
+   =================================================================== */
+
+.mascot-exit {
+  animation: mascot-exit-animation 0.4s ease-in forwards;
+}
+
+@keyframes mascot-exit-animation {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
+  }
+}
+
+/* ===================================================================
+   ERROR State - Confused/questioning expression
+   =================================================================== */
+
+.mascot-error {
+  animation: mascot-error-shake 0.5s cubic-bezier(0.36, 0, 0.66, -0.56) infinite;
+}
+
+.mascot-error .eyelids {
+  animation: eyelids-confused 0.8s ease-in-out infinite;
+}
+
+@keyframes mascot-error-shake {
+  0%,
+  100% {
+    transform: translateX(0) rotateZ(0deg);
+  }
+  25% {
+    transform: translateX(-4px) rotateZ(-1deg);
+  }
+  75% {
+    transform: translateX(4px) rotateZ(1deg);
+  }
+}
+
+@keyframes eyelids-confused {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ===================================================================
+   Loading Indicators
+   =================================================================== */
+
+.mascot-loader {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.loader-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--secondary, #e8b441);
+  animation: loader-bounce 1.4s infinite ease-in-out;
+}
+
+.loader-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loader-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes loader-bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+/* ===================================================================
+   Success Indicator
+   =================================================================== */
+
+.mascot-success-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--success, #276c44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: success-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.mascot-success-indicator .check-icon {
+  width: 18px;
+  height: 18px;
+  color: white;
+}
+
+@keyframes success-pop {
+  from {
+    transform: scale(0) rotate(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* ===================================================================
+   Accessibility - Respect prefers-reduced-motion
+   =================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot-container,
+  .mascot-container * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .mascot-enter {
+    opacity: 1;
+    transform: scale(1) translateY(0) !important;
+  }
+
+  .mascot-exit {
+    opacity: 0;
+    transform: scale(1) translateY(0) !important;
+  }
+}
+
+/* ===================================================================
+   Responsive sizing
+   =================================================================== */
+
+@media (max-width: 640px) {
+  .mascot-container {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .mascot-container {
+    max-width: 320px;
+  }
+}
