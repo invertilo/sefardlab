@@ -3,11 +3,13 @@ import { LogoutButton } from "@/components/auth/LogoutButton";
 import { Container } from "@/components/layout/Container";
 import { Logo } from "@/components/layout/Logo";
 import { Icon } from "@/components/ui/Icon";
+import { SplashNavigationMonitor } from "@/components/splash/SplashNavigationMonitor";
 import { routes } from "@/lib/site";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-dvh flex-col">
+      <SplashNavigationMonitor />
       <header className="sticky top-0 z-50 border-b border-border bg-bg/90 backdrop-blur-md">
         <Container className="flex min-h-16 items-center justify-between gap-4">
           <Logo href={routes.dashboard} />
