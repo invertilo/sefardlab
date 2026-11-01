@@ -2,7 +2,9 @@
  * Contratos de las APIs (`app/api/**`). Compartidos entre Route Handlers y el
  * cliente (`lib/api-client.ts`), así ambos lados no pueden desincronizarse.
  */
+import type { AchievementId, AchievementProgress } from "./achievements";
 import type { LessonExercise, LessonRow, ProgressRow, UserRow } from "./database.types";
+import type { ActivityDay } from "./gamification";
 
 /** Perfil del usuario autenticado (fila de `public.users`). */
 export type AuthUser = UserRow;
@@ -68,7 +70,7 @@ export type LessonResponse = { lesson: LessonRow };
 // --- Progreso ----------------------------------------------------------------
 
 export type ProgressEntry = ProgressRow & {
-  lesson: Pick<LessonRow, "day" | "week" | "title"> | null;
+  lesson: Pick<LessonRow, "day" | "week" | "title" | "word_count"> | null;
 };
 
 export type ProgressResponse = { progress: ProgressEntry[] };
@@ -139,27 +141,57 @@ export type LessonResult = {
 
 // --- Estadísticas ------------------------------------------------------------
 
-export type WeekStats = { week: number; completed: number; total: number };
+export type WeekStats = {
+  week: number;
+  completed: number;
+  total: number;
+  /** Lecciones de la semana completadas con 100% de precisión. */
+  perfect: number;
+};
 
+export type { ActivityDay } from "./gamification";
+
+export type UnlockedAchievement = { id: AchievementId; unlocked_at: string };
+
+export type NextLesson = Pick<LessonRow, "id" | "day" | "week" | "title" | "description">;
+
+/** `GET /api/user/stats` (snake_case, igual que el contrato de la fase 4). */
 export type UserStats = {
-  xpTotal: number;
+  xp_total: number;
   /** Racha vigente: 0 si el último día activo fue antes de ayer (UTC). */
   streak: number;
-  lessonsCompleted: number;
-  totalLessons: number;
-  /** 0–1 */
-  completionRate: number;
-  /** Primer día sin completar (31 si terminó el reto). */
-  currentDay: number;
-  currentWeek: number;
+  /** Palabras hebreas leídas (palabras de cada lección × veces completada). */
+  words_read: number;
+  /** Media de palabras por minuto en lecturas; null si aún no hay. */
+  avg_speed: number | null;
+  best_speed: number | null;
+  /** Días (UTC) con al menos una lección nueva completada. */
+  days_active: number;
+  /** IDs de insignias desbloqueadas, por fecha. */
+  achievements: AchievementId[];
+  achievements_detail: UnlockedAchievement[];
+  /** Progreso hacia cada insignia (también las desbloqueadas). */
+  achievement_progress: Record<AchievementId, AchievementProgress>;
+  /** Día del reto en curso (1–30). */
+  current_day: number;
+  current_week: number;
+  /** 0–100 */
+  progress_percentage: number;
+  lessons_completed: number;
+  total_lessons: number;
+  /** null si ya completó todas las lecciones. */
+  next_lesson_id: number | null;
+  next_lesson: NextLesson | null;
+  challenge_completed: boolean;
+  /** XP de los últimos 7 / 30 días (UTC, incluido hoy). */
+  weekly_xp: number;
+  monthly_xp: number;
   /** 0–1, null si no hay datos. */
-  averageAccuracy: number | null;
-  /** Palabras por minuto, null si no hay datos. */
-  averageReadingSpeed: number | null;
-  bestReadingSpeed: number | null;
-  achievementsUnlocked: number;
-  lastActivity: string | null;
+  average_accuracy: number | null;
+  last_activity: string | null;
+  /** Últimos 7 días (UTC), del más antiguo a hoy. */
+  activity: ActivityDay[];
   weeks: WeekStats[];
 };
 
-export type UserStatsResponse = { stats: UserStats };
+export type UserStatsResponse = UserStats;

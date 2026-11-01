@@ -183,9 +183,9 @@ export function ReadingExercise({ exercise, result, onAnswer, minReadingSpeed, d
       <ExerciseFeedback result={result}>
         {result &&
           (result.correct
-            ? metGoal
-              ? `Leíste a ${wpm} palabras por minuto: alcanzas la meta y ganas +${XP.speedBonus} XP de bonus al terminar.`
-              : `Leíste a ${wpm} palabras por minuto.${minReadingSpeed > 0 ? ` Con ${minReadingSpeed} ppm ganarías el bonus de velocidad.` : ""}`
+            ? wpm >= XP.fastReadingWpm
+              ? `Leíste a ${wpm} palabras por minuto: ¡lectura rápida! Ganas +${XP.speedBonus} XP de bonus al terminar.`
+              : `Leíste a ${wpm} palabras por minuto${metGoal ? " y alcanzas la meta" : ""}. Desde ${XP.fastReadingWpm} ppm ganas +${XP.speedBonus} XP de bonus.`
             : "No pasa nada: escucha el audio, repasa la transliteración y vuelve a intentarlo al repetir la lección.")}
       </ExerciseFeedback>
     </div>

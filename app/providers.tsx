@@ -141,7 +141,6 @@ function UserProvider({ children }: { children: ReactNode }) {
     queryKey: queryKeys.stats,
     queryFn: api.user.stats,
     enabled: user !== null,
-    select: (data) => data.stats,
   });
 
   const { refetch } = statsQuery;

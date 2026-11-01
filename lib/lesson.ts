@@ -1,7 +1,8 @@
 /**
  * Lógica pura de una lección: evaluar respuestas, medir velocidad y estimar XP.
- * Las constantes de XP reflejan el trigger `progress_before_insert`
- * (db/migrations/001_init.sql); la XP definitiva siempre la calcula la BD.
+ * Las reglas de XP viven en lib/gamification.ts (espejo del trigger
+ * `progress_before_insert`, db/migrations/002_gamification.sql); la XP
+ * definitiva siempre la calcula la BD.
  */
 import type {
   ExerciseResponse,
@@ -10,18 +11,12 @@ import type {
   MultipleChoiceExercise,
 } from "./api-types";
 import type { LessonExercise } from "./database.types";
+import { calculateLessonXp, XP, type XpBreakdown } from "./gamification";
 import { phases } from "./site";
 
-export const TOTAL_DAYS = 30;
+export { XP };
 
-export const XP = {
-  /** Por completar la lección. */
-  base: 10,
-  /** Máximo por precisión (proporcional a los aciertos). */
-  accuracy: 40,
-  /** Si se alcanza `min_reading_speed`. */
-  speedBonus: 10,
-} as const;
+export const TOTAL_DAYS = 30;
 
 /** Fase del reto (lib/site.ts) a la que pertenece un día. */
 export function phaseForDay(day: number) {
@@ -48,9 +43,9 @@ export function formatSeconds(ms: number): string {
   return `${(Math.max(ms, 0) / 1000).toLocaleString("es", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} s`;
 }
 
-/** XP orientativa de un acierto: la parte de precisión repartida entre ejercicios. */
+/** XP orientativa de un acierto: el bonus máximo de precisión repartido entre ejercicios. */
 export function xpPerCorrectAnswer(totalExercises: number): number {
-  return totalExercises > 0 ? Math.round(XP.accuracy / totalExercises) : 0;
+  return totalExercises > 0 ? Math.round(XP.accuracyTiers[0].xp / totalExercises) : 0;
 }
 
 export function evaluateMultipleChoice(exercise: MultipleChoiceExercise, selected: number): boolean {
@@ -100,9 +95,13 @@ export function summarizeLesson(lessonId: number, results: ExerciseResult[], tot
   };
 }
 
-/** Estimación local de la XP de la lección (misma fórmula que la BD). */
-export function estimateLessonXp(result: LessonResult, minReadingSpeed: number): number {
-  const accuracy = Math.round(result.accuracy * 100) / 100;
-  const speedBonus = minReadingSpeed > 0 && (result.readingSpeed ?? 0) >= minReadingSpeed ? XP.speedBonus : 0;
-  return XP.base + Math.round(accuracy * XP.accuracy) + speedBonus;
+/**
+ * Estimación local de la XP de la lección (misma fórmula que la BD). Pasa
+ * `streak` (ver `nextStreak`) para incluir el bonus de racha.
+ */
+export function estimateLessonXp(
+  result: LessonResult,
+  streak?: { next: number; advancedToday: boolean },
+): XpBreakdown {
+  return calculateLessonXp({ accuracy: result.accuracy, readingSpeed: result.readingSpeed, streak });
 }

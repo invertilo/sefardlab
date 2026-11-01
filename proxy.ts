@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import type { Database } from "@/lib/database.types";
 import { getSupabaseEnv } from "@/lib/supabase";
 
-const PROTECTED_PREFIXES = ["/dashboard", "/lesson"];
+const PROTECTED_PREFIXES = ["/dashboard", "/lesson", "/achievements"];
 const AUTH_PAGES = ["/login", "/signup"];
 
 /**

@@ -38,8 +38,13 @@ Crea:
 - **Permisos por columna**: el cliente no puede escribir `xp_total`, `streak` ni `xp_earned`.
 - **Triggers**:
   - `on_auth_user_created`: crea la fila en `public.users` al registrarse (también con Google).
-  - `progress_compute_xp`: calcula la XP de cada lección (10 + hasta 40 por precisión + 10 si alcanza la velocidad mínima).
+  - `progress_compute_xp`: calcula la XP de cada lección (la fórmula definitiva la fija `002_gamification.sql`).
   - `progress_award_xp`: suma la XP al usuario y actualiza la racha diaria (UTC).
+
+3. Después, pega y ejecuta [`db/migrations/002_gamification.sql`](db/migrations/002_gamification.sql) (fase 4). Añade:
+  - Nueva fórmula de XP en `progress_compute_xp`: 10 base + precisión (100% → +30, 80–99% → +20, 60–79% → +10) + lectura rápida ≥ 80 ppm (+10) + bonus de racha al llegar a 7 días (+100) y a 30 días (+200).
+  - `lessons.word_count` (columna generada) y `progress.attempts`: palabras leídas, contando repasos (máx. uno por minuto).
+  - `progress_unlock_achievements`: desbloquea automáticamente las 12 insignias (`award_achievements`) y da las que correspondan al progreso ya existente.
 
 Comprueba en **Table Editor** que aparecen las cuatro tablas.
 

@@ -26,7 +26,7 @@ export async function GET(_request: NextRequest, ctx: Ctx) {
     const { supabase, user } = await authorize(ctx);
     const { data, error } = await supabase
       .from("progress")
-      .select("*, lesson:lessons(day, week, title)")
+      .select("*, lesson:lessons(day, week, title, word_count)")
       .eq("user_id", user.id)
       .order("lesson_id", { ascending: true });
     assertNoDbError(error, "leer progreso");
@@ -41,7 +41,8 @@ export async function GET(_request: NextRequest, ctx: Ctx) {
  * POST /api/progress/[userId]
  * Body: { lesson_id, accuracy (0–1), reading_speed? (ppm) }
  * Guarda el resultado de una lección. La primera vez suma XP y actualiza la
- * racha (triggers en la BD); si se repite, solo conserva la mejor marca.
+ * racha (triggers en la BD); si se repite, conserva la mejor marca y suma
+ * un repaso (palabras leídas). Las insignias las desbloquea la BD.
  */
 export async function POST(request: NextRequest, ctx: Ctx) {
   try {
@@ -76,21 +77,22 @@ export async function POST(request: NextRequest, ctx: Ctx) {
     if (!row) throw new HttpError(500, "server_error", "No pudimos guardar el progreso.");
 
     if (!firstCompletion) {
+      // Siempre se actualiza (aunque no mejore la marca): el trigger
+      // `progress_track_attempt` cuenta el repaso para las palabras leídas y
+      // `progress_unlock_achievements` revisa las insignias.
       const best = {
         accuracy: Math.max(row.accuracy ?? 0, accuracy),
         reading_speed:
           readingSpeed === null ? row.reading_speed : Math.max(row.reading_speed ?? 0, readingSpeed),
       };
-      if (best.accuracy !== row.accuracy || best.reading_speed !== row.reading_speed) {
-        const updated = await supabase
-          .from("progress")
-          .update(best)
-          .eq("id", row.id)
-          .select("*")
-          .single();
-        assertNoDbError(updated.error, "mejorar progreso");
-        row = updated.data ?? row;
-      }
+      const updated = await supabase
+        .from("progress")
+        .update(best)
+        .eq("id", row.id)
+        .select("*")
+        .single();
+      assertNoDbError(updated.error, "mejorar progreso");
+      row = updated.data ?? row;
     }
 
     const profile = await supabase

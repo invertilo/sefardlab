@@ -18,6 +18,13 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             >
               Panel
             </Link>
+            <Link
+              href={routes.achievements}
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-medium text-muted hover:bg-surface-sunken hover:text-text"
+            >
+              <Icon name="trophy" size={20} />
+              <span className="sr-only sm:not-sr-only">Insignias</span>
+            </Link>
             <button
               type="button"
               aria-label="Ajustes (próximamente)"

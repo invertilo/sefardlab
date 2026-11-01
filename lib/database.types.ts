@@ -113,6 +113,8 @@ export type Database = {
           content: LessonContentBlock[];
           exercises: LessonExercise[];
           min_reading_speed: number;
+          /** Palabras hebreas de la lección (columna generada, 002_gamification.sql). */
+          word_count: number;
           created_at: string;
         };
         Insert: {
@@ -148,6 +150,9 @@ export type Database = {
           /** DECIMAL(3,2): PostgREST lo devuelve como número entre 0 y 1. */
           accuracy: number | null;
           xp_earned: number;
+          /** Veces completada (los repasos suman; máx. uno por minuto). */
+          attempts: number;
+          last_attempt_at: string | null;
         };
         Insert: {
           user_id?: string;

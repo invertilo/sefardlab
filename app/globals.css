@@ -234,3 +234,55 @@
 @utility animate-pop {
   animation: pop 300ms var(--ease-out-soft);
 }
+
+/* Gamificación del panel (desactivadas con prefers-reduced-motion). */
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-8deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.15) rotate(3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+@keyframes shake {
+  10%,
+  90% {
+    transform: translateX(-1px) rotate(-1deg);
+  }
+  20%,
+  80% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-5px) rotate(-3deg);
+  }
+  40%,
+  60% {
+    transform: translateX(5px) rotate(3deg);
+  }
+}
+@keyframes flicker {
+  0%,
+  100% {
+    transform: scale(1) rotate(-2deg);
+  }
+  50% {
+    transform: scale(1.08) rotate(2deg);
+  }
+}
+@utility animate-pop-in {
+  animation: pop-in 600ms var(--ease-out-soft) both;
+}
+@utility animate-shake {
+  animation: shake 700ms cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+@utility animate-flicker {
+  animation: flicker 1.6s ease-in-out infinite;
+}

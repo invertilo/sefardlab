@@ -10,6 +10,7 @@ export const routes = {
   login: "/login",
   signup: "/signup",
   dashboard: "/dashboard",
+  achievements: "/achievements",
   lesson: (id: string | number) => `/lesson/${id}`,
 } as const;
 
